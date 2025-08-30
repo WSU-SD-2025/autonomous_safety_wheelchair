@@ -1,0 +1,5 @@
+# secrets
+Keys.txt
+keys.sh
+*.env
+.onshape_to_robot.env

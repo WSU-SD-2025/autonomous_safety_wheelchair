@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/sejunmoon/airport_navigation_ws/install/airport_navigation_interfaces/include/**",
+        "/home/sejunmoon/Gamma_ws/install/zed_components/include/**",
+        "/home/sejunmoon/Gamma_ws/install/rslidar_msg/include/**",
+        "/home/sejunmoon/Gamma_ws/install/perception_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/sejunmoon/autonomous_safety_wheelchair/src/bringup/include/**",
+        "/home/sejunmoon/autonomous_safety_wheelchair/src/navigation/include/**",
+        "/home/sejunmoon/autonomous_safety_wheelchair/src/wheelchair_description/include/**",
+        "/home/sejunmoon/autonomous_safety_wheelchair/src/wheelchair_gazebo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

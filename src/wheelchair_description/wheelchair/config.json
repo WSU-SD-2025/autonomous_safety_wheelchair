@@ -1,0 +1,7 @@
+{
+    "documentId": "6f4b288bd678b0ae0f72219d",
+    "outputFormat": "urdf",
+    "packageName": "wheelchair_description/wheelchair",
+    "robotName": "wheelchair",
+    "assemblyName": "wheelchair_v1"
+}

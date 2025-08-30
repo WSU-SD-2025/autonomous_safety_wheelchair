@@ -1,0 +1,32 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/sejunmoon/airport_navigation_ws/build/robot_controls",
+        "/home/sejunmoon/airport_navigation_ws/install/robot_controls/lib/python3.10/site-packages",
+        "/home/sejunmoon/airport_navigation_ws/build/airport_navigation",
+        "/home/sejunmoon/airport_navigation_ws/install/airport_navigation/lib/python3.10/site-packages",
+        "/home/sejunmoon/airport_navigation_ws/install/airport_navigation_interfaces/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/yolo_perception_node/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/rslidar_msg/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/perception_nodes/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/perception_interfaces/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/mavros_launch/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/fake_gps/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/sejunmoon/airport_navigation_ws/build/robot_controls",
+        "/home/sejunmoon/airport_navigation_ws/install/robot_controls/lib/python3.10/site-packages",
+        "/home/sejunmoon/airport_navigation_ws/build/airport_navigation",
+        "/home/sejunmoon/airport_navigation_ws/install/airport_navigation/lib/python3.10/site-packages",
+        "/home/sejunmoon/airport_navigation_ws/install/airport_navigation_interfaces/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/yolo_perception_node/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/rslidar_msg/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/perception_nodes/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/perception_interfaces/local/lib/python3.10/dist-packages",
+        "/home/sejunmoon/Gamma_ws/install/mavros_launch/lib/python3.10/site-packages",
+        "/home/sejunmoon/Gamma_ws/install/fake_gps/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
