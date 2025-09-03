@@ -2,20 +2,20 @@
 <!-- Generated using onshape-to-robot -->
 <!-- Onshape document_id: 6f4b288bd678b0ae0f72219d -->
 <robot name="wheelchair">
-  <!-- Link frame -->
-  <link name="frame">
+  <!-- Link base_link -->
+  <link name="base_link">
     <inertial>
       <origin xyz="-4.76552e-18 2.86142e-17 -0.05" rpy="0 0 0"/>
       <mass value="109.261"/>
       <inertia ixx="2.39367" ixy="-7.30346e-16" ixz="0" iyy="5.92579" iyz="0" izz="8.13808"/>
     </inertial>
-    <!-- Part frame -->
+    <!-- Part base_link -->
     <visual>
       <origin xyz="0 0 -0.1" rpy="0 -0 0"/>
       <geometry>
         <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
       </geometry>
-      <material name="frame_material">
+      <material name="base_link_material">
         <color rgba="0.8 0.74902 0.913725 1"/>
       </material>
     </visual>
@@ -50,10 +50,10 @@
       </geometry>
     </collision>
   </link>
-  <!-- Joint from frame to chair -->
+  <!-- Joint from base_link to chair -->
   <joint name="chair_joint" type="fixed">
     <origin xyz="-1.42302e-19 5.74184e-17 0" rpy="3.14159 -0 1.5708"/>
-    <parent link="frame"/>
+    <parent link="base_link"/>
     <child link="chair"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
@@ -98,10 +98,10 @@
       </geometry>
     </collision>
   </link>
-  <!-- Joint from frame to left_wheel -->
+  <!-- Joint from base_link to left_wheel -->
   <joint name="front_rw" type="continuous">
     <origin xyz="0.265 -0.31 -0.05" rpy="-1.5708 -0 1.38778e-16"/>
-    <parent link="frame"/>
+    <parent link="base_link"/>
     <child link="left_wheel"/>
     <axis xyz="0 0 1"/>
     
@@ -146,10 +146,10 @@
       </geometry>
     </collision>
   </link>
-  <!-- Joint from frame to right_wheel -->
+  <!-- Joint from base_link to right_wheel -->
   <joint name="front_lw" type="continuous">
     <origin xyz="0.265 0.31 -0.05" rpy="-1.5708 -0 -1.38778e-16"/>
-    <parent link="frame"/>
+    <parent link="base_link"/>
     <child link="right_wheel"/>
     <axis xyz="0 0 1"/>
     
@@ -194,10 +194,10 @@
       </geometry>
     </collision>
   </link>
-  <!-- Joint from frame to right_wheel_2 -->
+  <!-- Joint from base_link to right_wheel_2 -->
   <joint name="back_lw" type="continuous">
     <origin xyz="-0.265 0.31 -0.05" rpy="-1.5708 -0 -1.38778e-16"/>
-    <parent link="frame"/>
+    <parent link="base_link"/>
     <child link="right_wheel_2"/>
     <axis xyz="0 0 1"/>
     
@@ -242,10 +242,10 @@
       </geometry>
     </collision>
   </link>
-  <!-- Joint from frame to left_wheel_2 -->
+  <!-- Joint from base_link to left_wheel_2 -->
   <joint name="back_rw" type="continuous">
     <origin xyz="-0.265 -0.31 -0.05" rpy="-1.5708 -0 1.38778e-16"/>
-    <parent link="frame"/>
+    <parent link="base_link"/>
     <child link="left_wheel_2"/>
     <axis xyz="0 0 1"/>
   
