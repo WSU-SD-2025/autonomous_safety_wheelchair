@@ -1,0 +1,75 @@
+import os
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
+from ament_index_python.packages import get_package_share_directory
+
+def generate_launch_description():
+    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+    pkg_wheelchair_description = get_package_share_directory('wheelchair_description')
+
+    #Gazebo Ignition Execution
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
+        ),
+        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
+    )
+
+    #Robot State Publisher Execution
+    #Create robot_description parameters from URDF file
+    robot_description_path = os.path.join(pkg_wheelchair_description, 'wheelchair', 'robot.urdf')
+    with open(robot_description_path, 'r') as f:
+        robot_desc = f.read()
+
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        output='screen',
+        parameters=[{
+            'use_sim_time': True,
+            'robot_description': robot_desc,
+        }]
+    )
+
+
+    #Spawn Robot
+
+    spawn_entity = Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=['-topic', 'robot_description',
+                   '-name', 'wheelchair',
+                   '-allow_renaming', 'true',
+
+                   # Spawn position
+                   '-x', '0.0',
+                   '-y', '0.0',
+                   '-z', '0.3'],
+    )
+
+
+    # ROS2 Gazebo Bridge
+    gz_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            # Clock (Simulation Time Synchronization): GZ -> ROS
+            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            # Odom GZ -> ROS
+            '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
+            # Control Ros -> Gazebo
+            '/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist',
+        ],
+        output='screen'
+    )
+
+    return LaunchDescription([
+        gazebo,
+        robot_state_publisher,
+        spawn_entity,
+        gz_bridge
+    ])

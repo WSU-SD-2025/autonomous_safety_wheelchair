@@ -1,0 +1,273 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 6f4b288bd678b0ae0f72219d -->
+<robot name="wheelchair">
+  <!-- Link frame -->
+  <link name="frame">
+    <inertial>
+      <origin xyz="-4.76552e-18 2.86142e-17 -0.05" rpy="0 0 0"/>
+      <mass value="109.261"/>
+      <inertia ixx="2.39367" ixy="-7.30346e-16" ixz="0" iyy="5.92579" iyz="0" izz="8.13808"/>
+    </inertial>
+    <!-- Part frame -->
+    <visual>
+      <origin xyz="0 0 -0.1" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
+      </geometry>
+      <material name="frame_material">
+        <color rgba="0.8 0.74902 0.913725 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.1" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link chair -->
+  <link name="chair">
+    <inertial>
+      <origin xyz="-2.47568e-17 -0.101356 -0.123597" rpy="0 0 0"/>
+      <mass value="13.9735"/>
+      <inertia ixx="0.552457" ixy="1.94092e-16" ixz="0" iyy="0.511931" iyz="-0.164794" izz="0.511931"/>
+    </inertial>
+    <!-- Part chair -->
+    <visual>
+      <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
+      </geometry>
+      <material name="chair_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from frame to chair -->
+  <joint name="chair_joint" type="fixed">
+    <origin xyz="-1.42302e-19 5.74184e-17 0" rpy="3.14159 -0 1.5708"/>
+    <parent link="frame"/>
+    <child link="chair"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link left_wheel -->
+  <link name="left_wheel">
+    <inertial>
+      <origin xyz="-2.22037e-09 1.06602e-06 -0.037537" rpy="0 0 0"/>
+      <mass value="13.3494"/>
+      <inertia ixx="0.111824" ixy="-2.80625e-07" ixz="1.36714e-10" iyy="0.111824" iyz="1.28637e-07" izz="0.19275"/>
+    </inertial>
+    <!-- Part tire -->
+    <visual>
+      <origin xyz="0 0 -0.037537" rpy="1.5708 1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+      <material name="tire_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.037537" rpy="1.5708 1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rim -->
+    <visual>
+      <origin xyz="0 0 -0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+      <material name="rim_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from frame to left_wheel -->
+  <joint name="front_rw" type="continuous">
+    <origin xyz="0.265 -0.31 -0.05" rpy="-1.5708 -0 1.38778e-16"/>
+    <parent link="frame"/>
+    <child link="left_wheel"/>
+    <axis xyz="0 0 1"/>
+    
+  </joint>
+  <!-- Link right_wheel -->
+  <link name="right_wheel">
+    <inertial>
+      <origin xyz="-2.22037e-09 1.06602e-06 0.0375369" rpy="0 0 0"/>
+      <mass value="13.3494"/>
+      <inertia ixx="0.111824" ixy="-2.80625e-07" ixz="1.36714e-10" iyy="0.111824" iyz="1.28637e-07" izz="0.19275"/>
+    </inertial>
+    <!-- Part tire_2 -->
+    <visual>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+      <material name="tire_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rim_2 -->
+    <visual>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+      <material name="rim_2_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from frame to right_wheel -->
+  <joint name="front_lw" type="continuous">
+    <origin xyz="0.265 0.31 -0.05" rpy="-1.5708 -0 -1.38778e-16"/>
+    <parent link="frame"/>
+    <child link="right_wheel"/>
+    <axis xyz="0 0 1"/>
+    
+  </joint>
+  <!-- Link right_wheel_2 -->
+  <link name="right_wheel_2">
+    <inertial>
+      <origin xyz="-2.22037e-09 1.06602e-06 0.0375369" rpy="0 0 0"/>
+      <mass value="13.3494"/>
+      <inertia ixx="0.111824" ixy="-2.80625e-07" ixz="1.36714e-10" iyy="0.111824" iyz="1.28637e-07" izz="0.19275"/>
+    </inertial>
+    <!-- Part tire_3 -->
+    <visual>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+      <material name="tire_3_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rim_3 -->
+    <visual>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+      <material name="rim_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from frame to right_wheel_2 -->
+  <joint name="back_lw" type="continuous">
+    <origin xyz="-0.265 0.31 -0.05" rpy="-1.5708 -0 -1.38778e-16"/>
+    <parent link="frame"/>
+    <child link="right_wheel_2"/>
+    <axis xyz="0 0 1"/>
+    
+  </joint>
+  <!-- Link left_wheel_2 -->
+  <link name="left_wheel_2">
+    <inertial>
+      <origin xyz="-2.22037e-09 1.06602e-06 -0.037537" rpy="0 0 0"/>
+      <mass value="13.3494"/>
+      <inertia ixx="0.111824" ixy="-2.80625e-07" ixz="1.36714e-10" iyy="0.111824" iyz="1.28637e-07" izz="0.19275"/>
+    </inertial>
+    <!-- Part tire_4 -->
+    <visual>
+      <origin xyz="0 2.77556e-17 -0.037537" rpy="1.5708 1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+      <material name="tire_4_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 2.77556e-17 -0.037537" rpy="1.5708 1.38778e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rim_4 -->
+    <visual>
+      <origin xyz="0 2.77556e-17 -0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+      <material name="rim_4_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 2.77556e-17 -0.037537" rpy="1.5708 -3.50219e-16 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/rim.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from frame to left_wheel_2 -->
+  <joint name="back_rw" type="continuous">
+    <origin xyz="-0.265 -0.31 -0.05" rpy="-1.5708 -0 1.38778e-16"/>
+    <parent link="frame"/>
+    <child link="left_wheel_2"/>
+    <axis xyz="0 0 1"/>
+  
+  </joint>
+
+
+  <gazebo>
+    <plugin name="ignition::gazebo::systems::DiffDrive" filename="libignition-gazebo6-diff-drive-system.so">
+      <left_joint>front_lw</left_joint>
+      <right_joint>front_rw</right_joint>
+      <left_joint>back_lw</left_joint>
+      <right_joint>back_rw</right_joint>
+      <wheel_separation>0.62</wheel_separation>
+      <wheel_radius>0.15</wheel_radius>
+      <topic>/cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <odom_publish_frequency>50</odom_publish_frequency>
+    </plugin>
+  </gazebo>
+
+
+
+
+
+</robot>

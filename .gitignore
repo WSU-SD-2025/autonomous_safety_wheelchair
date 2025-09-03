@@ -3,3 +3,9 @@ Keys.txt
 keys.sh
 *.env
 .onshape_to_robot.env
+build/
+install/
+log/
+*.pyc
+_pycache__/
+
