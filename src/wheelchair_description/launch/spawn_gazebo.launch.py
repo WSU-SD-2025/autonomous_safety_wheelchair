@@ -94,6 +94,17 @@ def generate_launch_description():
             '/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             '/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
 
+
+
+            # RGB/Depth Camera Gazebo-> ROS#
+            '/front_rgbd/rgb/image@sensor_msgs/msg/Image[gz.msgs.Image',
+            '/front_rgbd/depth/image@sensor_msgs/msg/Image[gz.msgs.Image',
+            'rear_rgbd/rgb/image@sensor_msgs/msg/Image[gz.msgs.Image',
+            'rear_rgbd/depth/image@sensor_msgs/msg/Image[gz.msgs.Image',
+
+            '/front_rgbd/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
+            '/rear_rgbd/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
+
         ],
         output='screen'
     )

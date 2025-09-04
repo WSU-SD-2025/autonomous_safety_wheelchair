@@ -6,12 +6,14 @@
 <xacro:property name="wheel_radius" value="0.15"/>
 <xacro:property name="wheel_sep" value="0.62"/>
 <xacro:property name="wheel_joint_rpy" value="-1.5708 0 0"/>
+<xacro:property name="cam_stand_len" value="0.8"/>
 
 
 <!-- Include Xacro files to use-->
 <xacro:include filename="materials.xacro"/>
 <xacro:include filename="macros/wheels.xacro"/>
 <xacro:include filename="macros/lidar.xacro"/>
+<xacro:include filename="macros/rgbd.xacro"/>
 
 
 <!-- Base_link Link-->
@@ -160,6 +162,9 @@
                   />
 
 
+
+
+
 <!-- LiDAAR Macro-->
 <xacro:lidar_block link_name="lidar_link"
                    parent="base_link"
@@ -167,6 +172,51 @@
                    xyz="0.3 0 0.025"
                    rpy="0 0 0"
                    scan_topic="/lidar/scan"/>
+
+
+
+
+
+<!-- RGB-D Camera Macro-->
+<xacro:camera_stand link_name="camera_stand_link"
+                     parent="base_link"
+                     xyz="-0.3 0 0.002"
+                     rpy="0 0 0"
+                     length="${cam_stand_len}"
+                     radius="0.02"/>
+
+<!-- Front RGB-D-->
+<xacro:rgbd_camera link_name="front_rgbd_link"
+                  parent="camera_stand_link"
+                  joint_name="front_rgbd_joint"
+                  xyz="0 0 ${cam_stand_len}"
+                  rpy="0 0 0"
+                  prefix="front_rgbd"
+                  width="640"
+                  height="480"
+                  hfov="1.0471976"
+                  near="0.05"
+                  far="15.0"
+                  rate="30"/>
+
+
+<!-- Back RGB-D-->
+<xacro:rgbd_camera link_name="rear_rgbd_link"
+                  parent="camera_stand_link"
+                  joint_name="rear_rgbd_joint"
+                  xyz="0 0 ${cam_stand_len}"
+                  rpy="0 0 3.14159"
+                  prefix="rear_rgbd"
+                  width="640"
+                  height="480"
+                  hfov="1.0471976"
+                  near="0.05"
+                  far="15.0"
+                  rate="30"/>
+
+
+
+
 
 
 
