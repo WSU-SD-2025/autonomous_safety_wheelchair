@@ -47,6 +47,9 @@ sudo apt install -y ros-humble-ros-gz ros-humble-ros-gz-bridge || true
     # ROS2 Senior Design Gazebo
     export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$(ros2 pkg prefix wheelchair_description)/share
 
+    # ROS2 Sensor Path
+    export IGN_GAZEBO_SYSTEM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/ign-gazebo-6/plugins:$IGN_GAZEBO_SYSTEM_PLUGIN_PATH
+
     # Short key for ROS2 keyboard-teleop
     alias kt='script -q /dev/null -c "LANG=C LC_ALL=C ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=false -p repeat_rate:=10.0 -p key_timeout:=0.6"'
 ```

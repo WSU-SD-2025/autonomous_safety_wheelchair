@@ -2,32 +2,46 @@ import os
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import PathJoinSubstitution, Command
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+
+    # Packages
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
+
     pkg_wheelchair_description = get_package_share_directory('wheelchair_description')
+    
+    # Paths
+    robot_xacro = PathJoinSubstitution(
+        [pkg_wheelchair_description, 'wheelchair', 'urdf', 'robot.xacro']
+    )
 
     world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
 
-    #Gazebo Ignition Execution
+
+
+
+    # 1)Gazebo Ignition Execution
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
         ),
         launch_arguments={
             
-            # Map, Sensor (Sensor: Need to put path into .bashrc)
+            # Map
             'gz_args': f'-r {world_path}'
             }.items(),
     )
 
     #Robot State Publisher Execution
-    #Create robot_description parameters from URDF file
-    robot_description_path = os.path.join(pkg_wheelchair_description, 'wheelchair', 'robot.urdf')
-    with open(robot_description_path, 'r') as f:
-        robot_desc = f.read()
+    #xacro -> robot_description
+    robot_description =  ParameterValue(
+        Command(['xacro ', robot_xacro]),
+        value_type=str
+    )
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -36,7 +50,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': True,
-            'robot_description': robot_desc,
+            'robot_description': robot_description,
         }]
     )
 
