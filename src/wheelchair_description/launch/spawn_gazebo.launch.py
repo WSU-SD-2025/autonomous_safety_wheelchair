@@ -9,12 +9,18 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     pkg_wheelchair_description = get_package_share_directory('wheelchair_description')
 
+    world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
+
     #Gazebo Ignition Execution
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
+        launch_arguments={
+            
+            # Map, Sensor (Sensor: Need to put path into .bashrc)
+            'gz_args': f'-r {world_path}'
+            }.items(),
     )
 
     #Robot State Publisher Execution
@@ -57,12 +63,23 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            # Clock (Simulation Time Synchronization): GZ -> ROS
+            # Clock (Simulation Time Synchronization): Gazebo -> ROS
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-            # Odom GZ -> ROS
+            # Odom Gazebo -> ROS
             '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
             # Control Ros -> Gazebo
             '/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist',
+
+
+
+
+            #--------------------Sensors--------------------#
+
+            # LiDAR Sensor Gazebo -> ROS
+            '/lidar@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+            '/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+            '/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
+
         ],
         output='screen'
     )

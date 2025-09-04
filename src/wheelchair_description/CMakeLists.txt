@@ -21,6 +21,7 @@ install(
     rviz
     launch
     wheelchair
+    worlds
   
   DESTINATION
     share/${PROJECT_NAME}/
