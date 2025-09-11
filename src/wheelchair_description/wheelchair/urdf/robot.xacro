@@ -1,238 +1,286 @@
 <?xml version="1.0"?>
 <robot name="wheelchair" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<!-- Common Parameters-->
-    <!-- Wheels (We have 4 wheels)-->
-<xacro:property name="wheel_radius" value="0.15"/>
-<xacro:property name="wheel_sep" value="0.62"/>
-<xacro:property name="wheel_joint_rpy" value="-1.5708 0 0"/>
-<xacro:property name="cam_stand_len" value="0.8"/>
+  <!-- =========================
+       Common Parameters
+  ========================== -->
+  <xacro:property name="wheel_radius" value="0.15"/>
+  <xacro:property name="wheel_sep"    value="0.62"/>
+  <xacro:property name="wheel_joint_rpy" value="-1.5708 0 0"/>
+  <xacro:property name="cam_stand_len"   value="0.8"/>
 
+  <!-- =========================
+       Includes
+  ========================== -->
+  <xacro:include filename="materials.xacro"/>
+  <xacro:include filename="macros/wheels.xacro"/>
+  <xacro:include filename="macros/lidar.xacro"/>
+  <xacro:include filename="macros/rgbd.xacro"/>
 
-<!-- Include Xacro files to use-->
-<xacro:include filename="materials.xacro"/>
-<xacro:include filename="macros/wheels.xacro"/>
-<xacro:include filename="macros/lidar.xacro"/>
-<xacro:include filename="macros/rgbd.xacro"/>
+  <!-- =========================
+       Footprint -> base_link
+  ========================== -->
+  <link name="base_footprint"/>
 
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child  link="base_link"/>
+    <!-- 필요 시 높이 보정: z -->
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
 
-<!-- Base_link Link-->
-<link name="base_link">
-
+  <!-- =========================
+       base_link
+  ========================== -->
+  <link name="base_link">
     <inertial>
-        <origin xyz="-4.76552e-18 2.86142e-17 -0.05" rpy="0 0 0"/>
-        <mass value="109.261"/>
-        <inertia
-            ixx="2.39367" ixy="-7.30346e-16" ixz="0"
-            iyy="5.92579" iyz="0"
-            izz="8.13808"/>
+      <origin xyz="-4.76552e-18 2.86142e-17 -0.05" rpy="0 0 0"/>
+      <mass value="109.261"/>
+      <inertia
+          ixx="2.39367" ixy="-7.30346e-16" ixz="0"
+          iyy="5.92579" iyz="0"
+          izz="8.13808"/>
     </inertial>
 
     <visual>
-        <origin xyz="0 0 -0.1" rpy="0 0 0"/>
-
-        <geometry>
-            <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
-        </geometry>
-
-        <material name="base_link_material">
-            <color rgba="0.8 0.74902 0.913725 1"/>
-        </material>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
+      </geometry>
+      <material name="base_link_material">
+        <color rgba="0.8 0.74902 0.913725 1"/>
+      </material>
     </visual>
 
     <collision>
-        <origin xyz="0 0 -0.1" rpy="0 -0 0"/>
-
-        <geometry>
-            <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
-        </geometry>
+      <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/frame.stl"/>
+      </geometry>
     </collision>
-</link>
+  </link>
 
-
-
-<!-- Chair Link-->
-<link name="chair">
-
+  <!-- =========================
+       Chair
+  ========================== -->
+  <link name="chair">
     <inertial>
-        <origin xyz="-2.47568e-17 -0.101356 -0.123597" rpy="0 0 0"/>
-        <mass value="13.9735"/>
-        <inertia 
-            ixx="0.552457" ixy="1.94092e-16" ixz="0" 
-            iyy="0.511931" iyz="-0.164794" 
-            izz="0.511931"/>
+      <origin xyz="-2.47568e-17 -0.101356 -0.123597" rpy="0 0 0"/>
+      <mass value="13.9735"/>
+      <inertia
+          ixx="0.552457" ixy="1.94092e-16" ixz="0"
+          iyy="0.511931" iyz="-0.164794"
+          izz="0.511931"/>
     </inertial>
 
     <visual>
-        <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 -0 0"/>
-
-        <geometry>
-            <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
-        </geometry>
-
-        <material name="chair_material">
-            <color rgba="0.231373 0.380392 0.705882 1"/>
-        </material>
+      <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
+      </geometry>
+      <material name="chair_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
     </visual>
 
     <collision>
-        <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 -0 0"/>
-
-        <geometry>
-            <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
-        </geometry>
+      <origin xyz="-5.74184e-17 4.72259e-05 0" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://wheelchair_description/wheelchair/assets/chair.stl"/>
+      </geometry>
     </collision>
-</link>
+  </link>
 
-
-        <!-- Joint from base_link to chair-->
-<joint name="chair_joint" type="fixed">
-    <origin xyz="-1.42302e-19 5.74184e-17 0" rpy="3.14159 -0 1.5708"/>
+  <joint name="chair_joint" type="fixed">
+    <origin xyz="-1.42302e-19 5.74184e-17 0" rpy="3.14159 0 1.5708"/>
     <parent link="base_link"/>
-    <child link="chair"/>
+    <child  link="chair"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
-</joint>
+  </joint>
 
+  <!-- =========================
+       Wheels (4WD skid)
+  ========================== -->
+  <xacro:wheel_link name="front_right_wheel"
+                    tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
+                    rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
+                    joint_name="front_rw"
+                    joint_xyz="0.265 -0.31 -0.05"
+                    joint_rpy ="-1.5708 0 0"
+                    tire_material="tire_material"
+                    rim_material="rim_material"
+                    inertial_xyz="-2.22037e-09 1.06602e-06 -0.037537"
+                    inertial_rpy="0 0 0"
+                    tire_xyz="0 0 -0.037537"
+                    tire_rpy="1.5708 1.38778e-16 0"
+                    rim_xyz="0 0 -0.037537"
+                    rim_rpy="1.5708 -3.50219e-16 0"/>
 
+  <xacro:wheel_link name="front_left_wheel"
+                    tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
+                    rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
+                    joint_name="front_lw"
+                    joint_xyz="0.265 0.31 -0.05"
+                    joint_rpy ="${wheel_joint_rpy}"
+                    tire_material="tire_2_material"
+                    rim_material="rim_2_material"
+                    inertial_xyz="-2.22037e-09 1.06602e-06 0.0375369"
+                    inertial_rpy="0 0 0"
+                    tire_xyz="0 0 0.037537"
+                    tire_rpy="1.5708 -1.38778e-16 0"
+                    rim_xyz="0 0 0.037537"
+                    rim_rpy="1.5708 -3.50219e-16 0"/>
 
-<!-- Wheels Macro-->
-<xacro:wheel_link name="left_wheel"
-                  tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
-                  rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
-                  joint_name="front_rw"
-                  joint_xyz="0.265 -0.31 -0.05"
-                  joint_rpy ="-1.5708 0 0"
-                  tire_material="tire_material"
-                  rim_material="rim_material"
-                  inertial_xyz="-2.22037e-09 1.06602e-06 -0.037537"
-                  inertial_rpy="0 0 0"
-                  tire_xyz="0 0 -0.037537"
-                  tire_rpy="1.5708 1.38778e-16 0"
-                  rim_xyz="0 0 -0.037537"
-                  rim_rpy="1.5708 -3.50219e-16 0"
-                  />
+  <xacro:wheel_link name="rear_right_wheel"
+                    tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
+                    rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
+                    joint_name="back_rw"
+                    joint_xyz="-0.265 -0.31 -0.05"
+                    joint_rpy ="${wheel_joint_rpy}"
+                    tire_material="tire_4_material"
+                    rim_material ="rim_4_material"
+                    inertial_xyz="-2.22037e-09 1.06602e-06 -0.037537"
+                    inertial_rpy="0 0 0"
+                    tire_xyz="0 2.77556e-17 -0.037537"
+                    tire_rpy="1.5708 1.38778e-16 0"
+                    rim_xyz="0 2.77556e-17 -0.037537"
+                    rim_rpy="1.5708 -3.50219e-16 0"/>
 
-<xacro:wheel_link name="right_wheel"
-                  tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
-                  rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
-                  joint_name="front_lw"
-                  joint_xyz="0.265 0.31 -0.05"
-                  joint_rpy ="${wheel_joint_rpy}"
-                  tire_material="tire_2_material"
-                  rim_material="rim_2_material"
-                  inertial_xyz="-2.22037e-09 1.06602e-06 0.0375369"
-                  inertial_rpy="0 0 0"
-                  tire_xyz="0 0 0.037537"
-                  tire_rpy="1.5708 -1.38778e-16 0"
-                  rim_xyz="0 0 0.037537"
-                  rim_rpy="1.5708 -3.50219e-16 0"
-                  />
+  <xacro:wheel_link name="rear_left_wheel"
+                    tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
+                    rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
+                    joint_name="back_lw"
+                    joint_xyz="-0.265 0.31 -0.05"
+                    joint_rpy ="${wheel_joint_rpy}"
+                    tire_material="tire_3_material"
+                    rim_material="rim_3_material"
+                    inertial_xyz="-2.22037e-09 1.06602e-06 0.0375369"
+                    inertial_rpy="0 0 0"
+                    tire_xyz="0 0 0.037537"
+                    tire_rpy="1.5708 -1.38778e-16 0"
+                    rim_xyz="0 0 0.037537"
+                    rim_rpy="1.5708 -3.50219e-16 0"/>
 
-<xacro:wheel_link name="left_wheel_2"
-                  tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
-                  rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
-                  joint_name="back_rw"
-                  joint_xyz="-0.265 -0.31 -0.05"
-                  joint_rpy ="${wheel_joint_rpy}"
-                  tire_material="tire_4_material"
-                  rim_material ="rim_4_material"
-                  inertial_xyz="-2.22037e-09 1.06602e-06 -0.037537"
-                  inertial_rpy="0 0 0"
-                  tire_xyz="0 2.77556e-17 -0.037537"
-                  tire_rpy="1.5708 1.38778e-16 0"
-                  rim_xyz="0 2.77556e-17 -0.037537"
-                  rim_rpy="1.5708 -3.50219e-16 0"
-                  />
-
-<xacro:wheel_link name="right_wheel_2"
-                  tire_mesh="package://wheelchair_description/wheelchair/assets/tire.stl"
-                  rim_mesh="package://wheelchair_description/wheelchair/assets/rim.stl"
-                  joint_name="back_lw"
-                  joint_xyz="-0.265 0.31 -0.05"
-                  joint_rpy ="${wheel_joint_rpy}"
-                  tire_material="tire_3_material"
-                  rim_material="rim_3_material"
-                  inertial_xyz="-2.22037e-09 1.06602e-06 0.0375369"
-                  inertial_rpy="0 0 0"
-                  tire_xyz="0 0 0.037537"
-                  tire_rpy="1.5708 -1.38778e-16 0"
-                  rim_xyz="0 0 0.037537"
-                  rim_rpy="1.5708 -3.50219e-16 0"
-                  />
-
-
-
-
-
-<!-- LiDAAR Macro-->
-<xacro:lidar_block link_name="lidar_link"
-                   parent="base_link"
-                   joint_name="lidar_mount"
-                   xyz="0.3 0 0.025"
-                   rpy="0 0 0"
-                   scan_topic="/lidar/scan"/>
-
-
-
-
-
-<!-- RGB-D Camera Macro-->
-<xacro:camera_stand link_name="camera_stand_link"
+  <!-- =========================
+       LiDAR
+  ========================== -->
+  <xacro:lidar_block link_name="lidar_link"
                      parent="base_link"
-                     xyz="-0.3 0 0.002"
+                     joint_name="lidar_joint"
+                     xyz="0.37 0 0.30"
                      rpy="0 0 0"
-                     length="${cam_stand_len}"
-                     radius="0.02"/>
+                     scan_topic="/lidar/scan"/>
 
-<!-- Front RGB-D-->
-<xacro:rgbd_camera link_name="front_rgbd_link"
-                  parent="camera_stand_link"
-                  joint_name="front_rgbd_joint"
-                  xyz="0 0 ${cam_stand_len}"
-                  rpy="0 0 0"
-                  prefix="front_rgbd"
-                  width="640"
-                  height="480"
-                  hfov="1.0471976"
-                  near="0.05"
-                  far="15.0"
-                  rate="30"/>
+  <!-- =========================
+       Camera stand + RGBD (front/rear)
+  ========================== -->
+  <xacro:camera_stand link_name="camera_stand_link"
+                      parent="base_link"
+                      xyz="-0.3 0 0.002"
+                      rpy="0 0 0"
+                      length="${cam_stand_len}"
+                      radius="0.02"/>
 
+  <!-- Front RGB-D -->
+  <xacro:rgbd_camera link_name="front_rgbd_link"
+                     parent="camera_stand_link"
+                     joint_name="front_rgbd_joint"
+                     xyz="0 0 ${cam_stand_len}"
+                     rpy="0 0 0"
+                     prefix="front_rgbd"
+                     width="640" height="480"
+                     hfov="1.0471976" near="0.05" far="15.0"
+                     rate="30"/>
 
-<!-- Back RGB-D-->
-<xacro:rgbd_camera link_name="rear_rgbd_link"
-                  parent="camera_stand_link"
-                  joint_name="rear_rgbd_joint"
-                  xyz="0 0 ${cam_stand_len}"
-                  rpy="0 0 3.14159"
-                  prefix="rear_rgbd"
-                  width="640"
-                  height="480"
-                  hfov="1.0471976"
-                  near="0.05"
-                  far="15.0"
-                  rate="30"/>
+  <!-- Rear RGB-D -->
+  <xacro:rgbd_camera link_name="rear_rgbd_link"
+                     parent="camera_stand_link"
+                     joint_name="rear_rgbd_joint"
+                     xyz="0 0 ${cam_stand_len}"
+                     rpy="0 0 3.14159"
+                     prefix="rear_rgbd"
+                     width="640" height="480"
+                     hfov="1.0471976" near="0.05" far="15.0"
+                     rate="30"/>
 
+  <!-- =========================
+       IMU (NEW)
+  ========================== -->
+  <!-- 1) 링크/관성 -->
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <!-- 시각화(선택) -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.01"/>
+      </geometry>
+      <material name="imu_material">
+        <color rgba="0.2 0.8 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
 
+  <!-- 2) base_link에 고정 -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="imu_link"/>
+    <!-- 실제 장착 위치로 조정 -->
+    <origin xyz="0.0 0.0 0.25" rpy="0 0 0"/>
+  </joint>
 
+  <!-- 3) Gazebo(IMU) 센서 지정 -->
+  <!-- URDF 안에서 Gazebo 플러그인/센서를 추가하려면 <gazebo reference="..."> 사용 -->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>false</visualize>
+      <gz_frame_id>imu_link</gz_frame_id>
+      <topic>imu</topic>
+      <pose> 0 0 0 0 0 0</pose>
+      <imu>
+        <angular_velocity>true</angular_velocity>
+        <linear_acceleration>true</linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
 
+  <!-- =========================
+       Gazebo DiffDrive (Ignition)
+  ========================== -->
+  <gazebo>
 
+    <plugin name="gz::sim::systems::JointStatePublisher"
+          filename="gz-sim-joint-state-publisher-system"/>
 
-
-<!-- Gazebo DiffDrive Plugin-->
-<gazebo>
     <plugin name="ignition::gazebo::systems::DiffDrive" filename="libignition-gazebo6-diff-drive-system.so">
+      <!-- 좌/우 바퀴 조인트: 좌측 2개, 우측 2개 -->
       <left_joint>front_lw</left_joint>
-      <right_joint>front_rw</right_joint>
       <left_joint>back_lw</left_joint>
+      <right_joint>front_rw</right_joint>
       <right_joint>back_rw</right_joint>
-      <wheel_separation>0.62</wheel_separation>
-      <wheel_radius>0.15</wheel_radius>
-      <topic>/cmd_vel</topic>
-      <odom_topic>odom</odom_topic>
+
+      <!-- 기하 파라미터 -->
+      <wheel_separation>${wheel_sep}</wheel_separation>
+      <wheel_radius>${wheel_radius}</wheel_radius>
+
+
+
+      <!-- Gazebo 내부 토픽: 브리지에서 ROS와 매핑 -->
+      <topic>/cmd_vel</topic>           <!-- => /model/<MODEL_NAME>/cmd_vel -->
+      <odom_topic>/odom</odom_topic><!-- => /model/<MODEL_NAME>/odometry -->
       <odom_publish_frequency>50</odom_publish_frequency>
+      <!-- TF는 EKF가 퍼블리시 -->
+
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
     </plugin>
-</gazebo>
+  </gazebo>
 
 </robot>

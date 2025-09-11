@@ -2,7 +2,7 @@ import os
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution, Command
+from launch.substitutions import PathJoinSubstitution, Command, FindExecutable
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
@@ -13,34 +13,35 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     pkg_wheelchair_description = get_package_share_directory('wheelchair_description')
+
+    pkg_navigation = get_package_share_directory('navigation')
     
     # Paths
-    robot_xacro = PathJoinSubstitution(
+    robot_xacro_path = PathJoinSubstitution(
         [pkg_wheelchair_description, 'wheelchair', 'urdf', 'robot.xacro']
     )
 
+
     world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
 
+    bridge_config_path = PathJoinSubstitution(
+        [pkg_navigation, 'config', 'gz_bridge.yaml']
+    )
 
-
-
-    # 1)Gazebo Ignition Execution
+    # 1) Gazebo Ignition Execution
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
         ),
         launch_arguments={
-            
-            # Map
             'gz_args': f'-r {world_path}'
-            }.items(),
+        }.items(),
     )
 
-    #Robot State Publisher Execution
-    #xacro -> robot_description
-    robot_description =  ParameterValue(
-        Command(['xacro ', robot_xacro]),
-        value_type=str
+    # 2) Robot State Publisher Execution
+    robot_description = ParameterValue(
+        Command([FindExecutable(name='xacro'), ' ', robot_xacro_path]),
+        value_type = str
     )
 
     robot_state_publisher = Node(
@@ -54,9 +55,7 @@ def generate_launch_description():
         }]
     )
 
-
-    #Spawn Robot
-
+    # 3) Spawn Robot
     spawn_entity = Node(
         package='ros_gz_sim',
         executable='create',
@@ -64,48 +63,21 @@ def generate_launch_description():
         arguments=['-topic', 'robot_description',
                    '-name', 'wheelchair',
                    '-allow_renaming', 'true',
-
-                   # Spawn position
                    '-x', '0.0',
                    '-y', '0.0',
                    '-z', '0.3'],
     )
 
-
-    # ROS2 Gazebo Bridge
+    # 4) ROS-Gazebo Bridge (Corrected Version)
     gz_bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=[
-            # Clock (Simulation Time Synchronization): Gazebo -> ROS
-            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-            # Odom Gazebo -> ROS
-            '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
-            # Control Ros -> Gazebo
-            '/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist',
-
-
-
-
-            #--------------------Sensors--------------------#
-
-            # LiDAR Sensor Gazebo -> ROS
-            '/lidar@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
-            '/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
-            '/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
-
-
-
-            # RGB/Depth Camera Gazebo-> ROS#
-            '/front_rgbd/rgb/image@sensor_msgs/msg/Image[gz.msgs.Image',
-            '/front_rgbd/depth/image@sensor_msgs/msg/Image[gz.msgs.Image',
-            'rear_rgbd/rgb/image@sensor_msgs/msg/Image[gz.msgs.Image',
-            'rear_rgbd/depth/image@sensor_msgs/msg/Image[gz.msgs.Image',
-
-            '/front_rgbd/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
-            '/rear_rgbd/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
-
-        ],
+        # The long list of arguments is now managed by the YAML file
+        arguments=[],
+        parameters=[{
+            'config_file': bridge_config_path,
+            'qos_overrides./tf_static.publisher.durability': 'transient_local',
+        }],
         output='screen'
     )
 
