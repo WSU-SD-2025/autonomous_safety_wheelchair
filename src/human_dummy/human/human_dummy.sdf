@@ -1,0 +1,40 @@
+<sdf version='1.9'>
+  <model name='human_dummy'>
+    <link name='lowertorso'>
+      <inertial>
+        <pose>1.08998e-16 -0.00621349 -0.197996 0 0 0</pose>
+        <mass>6.6801899999999996</mass>
+        <inertia>
+          <ixx>0.025303599999999999</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.065479499999999996</iyy>
+          <iyz>0.00077403400000000005</iyz>
+          <izz>0.057895299999999997</izz>
+        </inertia>
+      </inertial>
+      <collision name='lowertorso_collision'>
+        <pose>1.11022e-15 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://human_dummy/human/assets/lowertorso.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lowertorso_visual'>
+        <pose>1.11022e-15 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://human_dummy/human/assets/lowertorso.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.289216 0.47549 0.882353 1</diffuse>
+          <ambient>0.289216 0.47549 0.882353 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
