@@ -23,7 +23,7 @@ if(XACRO_EXE)
             > ${CMAKE_CURRENT_BINARY_DIR}/_robot.urdf
     DEPENDS 
       ${CMAKE_CURRENT_SOURCE_DIR}/wheelchair/urdf/robot.xacro
-      ${CMAKE_CURRENT_SOURCE_DIR}/wheelchair/urdf/materials.xacro
+      ${CMAKE_CURRENT_SOURCE_DIR}/wheelchair/urdf/macros/materials.xacro
       ${CMAKE_CURRENT_SOURCE_DIR}/wheelchair/urdf/macros/wheels.xacro
       ${CMAKE_CURRENT_SOURCE_DIR}/wheelchair/urdf/macros/lidar.xacro
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -40,7 +40,7 @@ install(
     worlds
   
   DESTINATION
-    share/${PROJECT_NAME}/
+    share/${PROJECT_NAME}
 )
 
 ament_export_dependencies(urdf xacro)

@@ -1,0 +1,360 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\human_dummy\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\rviz_display.launch.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\launch\\rviz_display.launch.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\spawn_gazebo.launch.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\launch\\spawn_gazebo.launch.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_interfaces\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\package.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\human_dummy\\package.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\package.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_interfaces\\package.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.zsh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\human_dummy\\share\\human_dummy\\package.zsh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\human_dummy\\share\\human_dummy\\package.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\human_dummy\\share\\human_dummy\\package.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.dsv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\human_dummy\\share\\human_dummy\\package.dsv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.bash||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:install\\human_dummy\\share\\human_dummy\\package.bash||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.urdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\human_dummy\\human\\human_dummy.urdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\human_dummy\\human\\human_dummy.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\human_dummy\\human\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\course_world.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\worlds\\course_world.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\Course.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\worlds\\Course.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\empty.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\worlds\\empty.sdf||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "rviz_display.launch.py",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\rviz_display.launch.py",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\launch\\rviz_display.launch.py",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\rviz_display.launch.py",
+              "RelativeToolTip": "src\\wheelchair_description\\launch\\rviz_display.launch.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:54:21.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "robot.xacro",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro",
+              "RelativeToolTip": "src\\wheelchair_description\\wheelchair\\urdf\\robot.xacro",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:42:33.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "package.xml",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\package.xml",
+              "RelativeDocumentMoniker": "src\\wheelchair_interfaces\\package.xml",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\package.xml",
+              "RelativeToolTip": "src\\wheelchair_interfaces\\package.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-09-21T01:37:31.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "package.zsh",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.zsh",
+              "RelativeDocumentMoniker": "install\\human_dummy\\share\\human_dummy\\package.zsh",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.zsh",
+              "RelativeToolTip": "install\\human_dummy\\share\\human_dummy\\package.zsh",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:30:57.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "package.xml",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\package.xml",
+              "RelativeDocumentMoniker": "src\\human_dummy\\package.xml",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\package.xml",
+              "RelativeToolTip": "src\\human_dummy\\package.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-09-21T01:30:56.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "src\\human_dummy\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\CMakeLists.txt",
+              "RelativeToolTip": "src\\human_dummy\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-09-21T01:30:05.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\CMakeLists.txt",
+              "RelativeToolTip": "src\\wheelchair_description\\CMakeLists.txt",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-09-21T01:29:21.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "src\\wheelchair_interfaces\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_interfaces\\CMakeLists.txt",
+              "RelativeToolTip": "src\\wheelchair_interfaces\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-09-21T01:29:38.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "spawn_gazebo.launch.py",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\spawn_gazebo.launch.py",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\launch\\spawn_gazebo.launch.py",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\launch\\spawn_gazebo.launch.py",
+              "RelativeToolTip": "src\\wheelchair_description\\launch\\spawn_gazebo.launch.py",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:18:47.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "package.sh",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.sh",
+              "RelativeDocumentMoniker": "install\\human_dummy\\share\\human_dummy\\package.sh",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.sh",
+              "RelativeToolTip": "install\\human_dummy\\share\\human_dummy\\package.sh",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFEAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:30:53.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "package.ps1",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.ps1",
+              "RelativeDocumentMoniker": "install\\human_dummy\\share\\human_dummy\\package.ps1",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.ps1",
+              "RelativeToolTip": "install\\human_dummy\\share\\human_dummy\\package.ps1",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAHEAAABPAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKISURBVDhPlVLdS1RBFP/dux/JrppKUVoISrRSbVGEBq4Z5ZPRk39A9FYPUQ89CUEv2WOC\u002BFRB9QcUPoQkBItUkAa\u002BpNZ\u002BGO2u3nbdVe/evevuzsydZmY/shehM/fMuefMnN/8zuFoEBIOh7m0\u002BwnnnPX39z/0\u002B/1PaiEVVFYCUEI4pYQzRpU6DlMqY9IuLCzwubk5llhP3lFJNdHlJoHkUl8NtG51XV0BIQShUEj/vrw6GY/Hb6qgEHXqOM6\u002BIFJs28b8/Ly86xUAL2vhvwzEVgXZ8984EzIycg1ng0H0BQLKr4tqoqiND18egqYJV\u002BjMu/fo7OpSvk0YvG4dLvFUhXI44j7hGtKGwW\u002BN3agW2ChB6PqGAV9bB1oCQUxveIHOHkwl3VjxdyN3vA/rh0/A1X0ShTJRjysAxphkrQAi0Rjgb8VyWUfcpoDLg/uXevDoQwTPI9t4Y5QQyxZgJBOkAbCXQc4uw\u002BQexPJlME3H7dkVdDV78HbsHJZWk1jL5pHezCG9kdr8B0BSkCzyxTLSjgcRqwKnrRWZHRuO7sLH1DZ2ShTRtAlqbsHKGJ8bAJTSBoMCZfhB3JiJb2EzmkDs7jBGX33Bs8VfOAgGZzsPapnIb\u002BVmGwD1ZEnhN/Xia7YEtruLIy1NuPJ6UXV\u002B6voZPBjshVe0Lp/NwNfanpK5brmZpinnRwEcE0n3Ojk8onkmaUGlVEKxQhBeXILf58Pj0258\u002B2TgQPuhhExRDCzLqvZArN5mDReabARdBYSaihjylzCgZREs/MRoB8HRbAzcyiGTSkRlrmJQLBZVCZpYVwcHlJUDVZ0r6dV9DafOX8Sa8RQvpieZzFXDMD4\u002BXp3X/5CJiQmRC/wBUOeA8MehIQsAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-09-21T01:30:51.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "package.dsv",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.dsv",
+              "RelativeDocumentMoniker": "install\\human_dummy\\share\\human_dummy\\package.dsv",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.dsv",
+              "RelativeToolTip": "install\\human_dummy\\share\\human_dummy\\package.dsv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:30:46.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "package.bash",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.bash",
+              "RelativeDocumentMoniker": "install\\human_dummy\\share\\human_dummy\\package.bash",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\install\\human_dummy\\share\\human_dummy\\package.bash",
+              "RelativeToolTip": "install\\human_dummy\\share\\human_dummy\\package.bash",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:30:36.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "human_dummy.urdf",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.urdf",
+              "RelativeDocumentMoniker": "src\\human_dummy\\human\\human_dummy.urdf",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.urdf",
+              "RelativeToolTip": "src\\human_dummy\\human\\human_dummy.urdf",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-21T01:30:34.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "human_dummy.sdf",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.sdf",
+              "RelativeDocumentMoniker": "src\\human_dummy\\human\\human_dummy.sdf",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\human_dummy.sdf",
+              "RelativeToolTip": "src\\human_dummy\\human\\human_dummy.sdf",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-21T01:30:26.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "config.json",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\config.json",
+              "RelativeDocumentMoniker": "src\\human_dummy\\human\\config.json",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\human_dummy\\human\\config.json",
+              "RelativeToolTip": "src\\human_dummy\\human\\config.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T01:30:22.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "course_world.sdf",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\course_world.sdf",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\worlds\\course_world.sdf",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\course_world.sdf",
+              "RelativeToolTip": "src\\wheelchair_description\\worlds\\course_world.sdf",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-21T01:08:01.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "empty.sdf",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\empty.sdf",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\worlds\\empty.sdf",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\empty.sdf",
+              "RelativeToolTip": "src\\wheelchair_description\\worlds\\empty.sdf",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAqwH0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-21T00:40:36.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "config_course.json",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json",
+              "RelativeToolTip": "src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-16T00:03:26.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Course.sdf",
+              "DocumentMoniker": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\Course.sdf",
+              "RelativeDocumentMoniker": "src\\wheelchair_description\\worlds\\Course.sdf",
+              "ToolTip": "C:\\Users\\Lyla Ott\\source\\repos\\WSU-SD-2025\\autonomous_safety_wheelchair\\src\\wheelchair_description\\worlds\\Course.sdf",
+              "RelativeToolTip": "src\\wheelchair_description\\worlds\\Course.sdf",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-16T00:03:24.408Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

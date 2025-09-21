@@ -3,6 +3,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution, Command, FindExecutable
+from launch.substitutions import TextSubstitution
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
@@ -17,12 +18,11 @@ def generate_launch_description():
     pkg_navigation = get_package_share_directory('navigation')
     
     # Paths
-    robot_xacro_path = PathJoinSubstitution(
-        [pkg_wheelchair_description, 'wheelchair', 'urdf', 'robot.xacro']
-    )
+    robot_xacro_path = os.path.join(pkg_wheelchair_description, 'wheelchair', 'urdf', 'robot.xacro')
 
 
-    world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
+    #world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
+    world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'course_world.sdf')
 
     bridge_config_path = PathJoinSubstitution(
         [pkg_navigation, 'config', 'gz_bridge.yaml']
@@ -39,10 +39,18 @@ def generate_launch_description():
     )
 
     # 2) Robot State Publisher Execution
+    from launch.substitutions import TextSubstitution
+
     robot_description = ParameterValue(
-        Command([FindExecutable(name='xacro'), ' ', robot_xacro_path]),
-        value_type = str
+        Command([
+            FindExecutable(name='xacro'),
+            robot_xacro_path
+        ]),
+        value_type=str
     )
+
+
+
 
     robot_state_publisher = Node(
         package='robot_state_publisher',

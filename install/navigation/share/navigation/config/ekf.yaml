@@ -1,0 +1,42 @@
+# ekf.yaml (ROS 2 robot_localization)
+ekf_filter_node:
+  ros__parameters:
+    use_sim_time: true
+
+    frequency: 50.0
+    two_d_mode: true                  # 휠체어 2D 주행
+
+    # ---- frames (아주 중요) ----
+    base_link_frame: base_link
+    odom_frame: odom
+    world_frame: odom                 # SLAM 사용할 땐 world=odom 권장
+    publish_tf: true                  # EKF가 odom->base_link TF 발행
+
+    # ---- wheel odom (Ignition diff-drive가 내는 /odom) ----
+    odom0: /odom
+    odom0_differential: false
+    odom0_queue_size: 10
+    odom0_nodelay: true
+    odom0_config: [true,  true,  false,   # x, y, z
+                   false, false, true,    # roll, pitch, yaw
+                   true,  true,  false,   # vx, vy, vz
+                   false, false, true,    # vroll, vpitch, vyaw
+                   false, false, false]   # ax, ay, az
+
+    # ---- IMU (robot.xacro에서 publish한 /imu/data) ----
+    imu0: /imu/data
+    imu0_differential: false
+    imu0_queue_size: 50
+    imu0_nodelay: true
+    imu0_remove_gravitational_acceleration: true
+    # 방향(yaw) + 각속도만 사용 (바이어스는 추후 필요시 추가)
+    imu0_config:  [false, false, false,   # x, y, z
+                   true,  true,  true,    # roll, pitch, yaw
+                   false, false, false,   # vx, vy, vz
+                   true,  true,  true,    # vroll, vpitch, vyaw
+                   false, false, false]   # ax, ay, az
+
+    # 타임싱크, 이상치 제거 등
+    transform_time_offset: 0.0
+    sensor_timeout: 0.1
+    print_diagnostics: true

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\launch",
+    "\\src",
+    "\\src\\wheelchair_description",
+    "\\src\\wheelchair_description\\wheelchair",
+    "\\src\\wheelchair_description\\wheelchair\\assets",
+    "\\src\\wheelchair_description\\wheelchair\\urdf",
+    "\\src\\wheelchair_description\\wheelchair\\urdf\\Courses",
+    "\\src\\wheelchair_description\\wheelchair\\urdf\\macros",
+    "\\src\\wheelchair_interfaces"
+  ],
+  "SelectedNode": "\\src\\wheelchair_description\\wheelchair\\urdf\\Courses\\config_course.json",
+  "PreviewInSolutionExplorer": false
+}

@@ -26,7 +26,7 @@ install(
   DIRECTORY
     rviz
     launch
-    human
+   human
   DESTINATION
     share/${PROJECT_NAME}
 )

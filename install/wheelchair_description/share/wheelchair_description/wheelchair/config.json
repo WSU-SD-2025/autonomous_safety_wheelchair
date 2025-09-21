@@ -1,0 +1,68 @@
+{
+    "documentId": "6f4b288bd678b0ae0f72219d",
+    "output_format": "urdf",
+    "packageName": "wheelchair_description/wheelchair",
+    "robotName": "wheelchair",
+    "assemblyName": "wheelchair_export",
+
+    "root_link": "frame",
+
+    "links": {
+        "frame": {},
+        "chair": {},
+        "front_right_wheel": {},
+        "front_left_wheel": {},
+        "back_right_wheel": {},
+        "back_left_wheel": {}
+
+    },
+
+    "groups": {
+        "frame": ["frame <1>"],
+        "chair": ["chair <1>"],
+        "front_right_wheel": ["right_wheel <1>"],
+        "front_left_wheel": ["left_wheel <1>"],
+        "back_right_wheel": ["right_wheel <2>"],
+        "back_left_wheel": ["left_wheel <2>"]
+    },
+
+
+    "joints": {
+        "chair_fixed": {
+            "parent": "frame",
+            "child": "chair",
+            "type": "fixed"
+        },
+
+        "front_right_wheel": {
+            "parent": "frame",
+            "child": "front_right_wheel",
+            "type": "continuous",
+            "axis": "0 1 0"
+        },
+
+        "front_left_wheel": {
+            "parent": "frame",
+            "child": "front_left_wheel",
+            "type": "continuous",
+            "axis": "0 1 0"
+        },
+
+        "back_right_wheel": {
+            "parent": "frame",
+            "child": "back_right_wheel",
+            "type": "continuous",
+            "axis": "0 1 0"
+        },
+
+        "back_left_wheel": {
+            "parent": "frame",
+            "child": "back_left_wheel",
+            "type": "continuous",
+            "axis": "0 1 0"
+        }
+    },
+
+
+    "scale": 0.001
+}
