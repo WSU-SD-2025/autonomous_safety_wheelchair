@@ -1,0 +1,7 @@
+{
+    "documentId": "237f26396eb8ce58cc5779a2",
+    "outputFormat": "urdf",
+    "packageName": "human_dummy/human",
+    "robotName": "human_dummy",
+    "assemblyName": "DummyAssy"
+}
