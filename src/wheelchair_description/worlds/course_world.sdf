@@ -65,7 +65,7 @@
 			</link>
 		</model>
 
-		<!-- You can insert your course geometry as a model here -->
+		<!-- Your course geometry with blue material -->
 		<model name="my_course">
 			<static>true</static>
 			<link name="link">
@@ -73,15 +73,19 @@
 					<geometry>
 						<mesh>
 							<uri>./assets/course_world.stl</uri>
-
 						</mesh>
 					</geometry>
+					<material>
+						<ambient>0 0 0.3 1</ambient>
+						<diffuse>0 0 1 1</diffuse>
+						<specular>0.5 0.5 0.7 1</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
 				</visual>
 				<collision name="course_collision">
 					<geometry>
 						<mesh>
 							<uri>./assets/course_world.stl</uri>
-
 						</mesh>
 					</geometry>
 				</collision>
