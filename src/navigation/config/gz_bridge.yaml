@@ -1,11 +1,104 @@
 # gz_bridge.yaml
 
-# LiDAR: Gazebo -> ROS
+
+# GPS: Gazebo -> ROS
+- ros_topic_name: "/gps/fix"
+  gz_topic_name: "/gps/fix"
+  ros_type_name: "sensor_msgs/msg/NavSatFix"
+  gz_type_name: "gz.msgs.NavSat"
+  direction: GZ_TO_ROS
+
+# 2D LiDAR: Gazebo -> ROS
 - ros_topic_name: "/lidar/scan"
   gz_topic_name: "/lidar/scan"
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
+
+# 3D LiDAR
+# - ros_topic_name: "/lidar/scan"
+#   gz_topic_name: "/lidar/scan"
+#   ros_type_name: "sensor_msgs/msg/PointCloud2"
+#   gz_type_name: "gz.msgs.PointCloudPacked"
+#   direction: GZ_TO_ROS
+
+# Front RGBD Camera
+# RGB image
+- ros_topic_name: "/front_rgbd/rgb/image"
+  gz_topic_name: "/front_rgbd/rgb/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+# RGB Camera info
+- ros_topic_name: "/front_rgbd/rgb/camera_info"
+  gz_topic_name: "/front_rgbd/rgb/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# Depth
+- ros_topic_name: "/front_rgbd/depth/image"
+  gz_topic_name: "/front_rgbd/depth/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+# Depth Camera info
+- ros_topic_name: "/front_rgbd/depth/camera_info"
+  gz_topic_name: "/front_rgbd/depth/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# Depth PointCloud
+- ros_topic_name: "/front_rgbd/depth/points"
+  gz_topic_name: "/front_rgbd/depth/image/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+
+# Rear RGBD Camera
+# RGB image
+- ros_topic_name: "/rear_rgbd/rgb/image"
+  gz_topic_name: "/rear_rgbd/rgb/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+# RGB Camera info
+- ros_topic_name: "/rear_rgbd/rgb/camera_info"
+  gz_topic_name: "/rear_rgbd/rgb/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# Depth
+- ros_topic_name: "/rear_rgbd/depth/image"
+  gz_topic_name: "/rear_rgbd/depth/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+# Depth Camera info
+- ros_topic_name: "/rear_rgbd/depth/camera_info"
+  gz_topic_name: "/rear_rgbd/depth/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# Depth PointCloud
+- ros_topic_name: "/rear_rgbd/depth/points"
+  gz_topic_name: "/rear_rgbd/depth/image/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+
+
+
+
 
 
 # Odometry: Gazebo -> ROS
@@ -18,7 +111,6 @@
 
 # # IMU: Gazebo -> ROS
 - ros_topic_name: "/imu/data"
-  # Gazebo IMU 센서의 기본 토픽 경로입니다. urdf와 다를 수 있으니 확인 필요
   gz_topic_name: "/imu"
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "gz.msgs.IMU"
@@ -27,7 +119,7 @@
 
 # Clock: Gazebo -> ROS
 - ros_topic_name: "/clock"
-  gz_topic_name: "/clock"
+  gz_topic_name: "/world/empty/clock"
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS

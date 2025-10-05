@@ -1,13 +1,1 @@
-{
-    "configuration": "default",
-    "documentId": "6f4b288bd678b0ae0f72219d",
-    "documentMicroversion": "21b3df2e73e9e6dd42c9ec8f",
-    "elementId": "66087c5e50ee20ae37c7ec3b",
-    "fullConfiguration": "default",
-    "id": "MKS04FChF1A8mCsiq",
-    "isStandardContent": false,
-    "name": "frame <1>",
-    "partId": "JHD",
-    "suppressed": false,
-    "type": "Part"
-}
+/home/sejunmoon/autonomous_safety_wheelchair/src/wheelchair_description/wheelchair/assets/frame.part

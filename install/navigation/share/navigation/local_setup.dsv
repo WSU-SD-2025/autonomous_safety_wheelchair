@@ -1,2 +1,1 @@
-source;share/navigation/environment/ament_prefix_path.sh
-source;share/navigation/environment/path.sh
+/home/sejunmoon/autonomous_safety_wheelchair/build/navigation/ament_cmake_environment_hooks/local_setup.dsv

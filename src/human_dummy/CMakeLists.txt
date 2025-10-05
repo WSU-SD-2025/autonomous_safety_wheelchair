@@ -24,8 +24,8 @@ endif()
 
 install(
   DIRECTORY
-    rviz
-    launch
+   #rviz
+   #launch
    human
   DESTINATION
     share/${PROJECT_NAME}

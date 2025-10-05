@@ -219,4 +219,9 @@ __marimo__/
 .key
 
 # TEMP
-.sh
+.sh/build/
+/install/
+/log/
+/.colcon/
+/.ros/
+*.swp

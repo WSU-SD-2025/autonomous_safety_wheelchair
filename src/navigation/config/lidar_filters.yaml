@@ -1,0 +1,21 @@
+pointcloud_filters:
+  ros__parameters:
+    input_topic: /lidar/scan
+    output_topic: /lidar/points_filtered
+    filters:
+      - name: crop_box_self
+        type: pcl/CropBox
+        params:
+          box_frame: base_link
+          min_x: -0.45
+          max_x: 0.45
+          min_y: -0.35
+          max_y: 0.35
+          min_z: -0.10
+          max_z: 1.10
+          negative: true
+      
+      - name: voxel_downsample
+        type: pcl/VoxelGrid
+        params:
+          leaf_size: 0.05
