@@ -1,3 +1,5 @@
+
+
 bt_navigator:
   ros__parameters:
     use_sim_time: True
@@ -8,6 +10,10 @@ bt_navigator:
     default_server_timeout: 20
     wait_for_service_timeout: 1000
     enable_groot_monitoring: true
+    # 'default_nav_through_poses_bt_xml' and 'default_nav_to_pose_bt_xml' are use defaults:
+    # nav2_bt_navigator/navigate_to_pose_w_replanning_and_recovery.xml
+    # nav2_bt_navigator/navigate_through_poses_w_replanning_and_recovery.xml
+    # They can be set here or via a RewrittenYaml remap from a parent launch file to Nav2.
     plugin_lib_names:
       - nav2_compute_path_to_pose_action_bt_node
       - nav2_compute_path_through_poses_action_bt_node
@@ -74,7 +80,7 @@ controller_server:
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 1.0
     progress_checker_plugin: "progress_checker"
-    goal_checker_plugins: ["general_goal_checker"] 
+    goal_checker_plugins: ["general_goal_checker"] # "precise_goal_checker"
     controller_plugins: ["FollowPath"]
 
     # Progress checker parameters
@@ -82,35 +88,43 @@ controller_server:
       plugin: "nav2_controller::SimpleProgressChecker"
       required_movement_radius: 0.05
       movement_time_allowance: 0.3
-
+    # Goal checker parameters
+    #precise_goal_checker:
+    #  plugin: "nav2_controller::SimpleGoalChecker"
+    #  xy_goal_tolerance: 0.25
+    #  yaw_goal_tolerance: 0.25
+    #  stateful: True
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.25
       yaw_goal_tolerance: 0.25
-
-    # FollowPath (RPP)
+    # MPPI parameters
     FollowPath:
-      plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController" 
-      desired_linear_vel: 0.35                                                         # // For Smooth forward velocity
-      lookahead_dist: 0.9                                                              # // Looks farther ahead to reduce sharp turns
-      min_lookahead_dist: 0.45                                                         
-      max_lookahead_dist: 1.3                                                          
-      lookahead_time: 1.5                                                              
-      use_velocity_scaled_lookahead_dist: true                                         
-      rotate_to_heading: true                                                          
-      rotate_to_heading_angular_vel: 0.5                                               # Gentler rotation speed
-      allow_reversing: false                                                           # Disable reversing (more stable)
-      transform_tolerance: 0.2
-      use_interpolation: true
-      use_cost_regulated_linear_velocity_scaling: true
-      cost_scaling_dist: 0.6
-      cost_scaling_gain: 1.0
-      inflation_cost_scaling_factor: 3.0
-      use_approach_linear_velocity_scaling: true
-      min_approach_linear_velocity: 0.05
-      max_robot_pose_search_dist: 0.6                                                  # Prevent selecting waypoints too far away
-      use_direction_path_following: true                                               # Maintain path-following direction to avoid necessary turns
+      plugin: "nav2_mppi_controller::MPPIController"
+      time_steps: 24
+      model_dt: 0.1
+      batch_size: 600
+      iteration_count: 1
+      temperature: 0.3
+      gamma: 0.015
+      vx_max: 2.0
+      vx_min: -0.1
+      wz_max: 1.0
+      vx_std: 0.2
+      vy_std: 0.0
+      wz_std: 0.4
+      acceleration_limits.vx: 2.5
+      acceleration_limits.wz: 3.0
+      deceleration_limit: 2.5
+      cost_weights:
+        goal_cost: 3.0
+        path_cost: 2.0
+        path_distance_bias: 1.0
+        obstacle_cost: 4.0
+        inflation_cost: 0.4
+        curvature_cost: 0.15
+
 
 local_costmap:
   local_costmap:
@@ -146,6 +160,7 @@ local_costmap:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
         inflation_radius: 0.5
+
 
 global_costmap:
   global_costmap:
@@ -212,16 +227,17 @@ map_saver:
 
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 2.0              # Smac2D (Stable even at 2~3HZ) (Low resource & High stability focus)
+    expected_planner_frequency: 1.0
     use_sim_time: True
     planner_plugins: ["GridBased"]
     GridBased:
-      plugin: "nav2_smac_planner/SmacPlanner2D"  
-      tolerance: 0.25                            # Goal proximity tolerance
-      use_astar: true                            # Use A* search
-      allow_unknown: true                        # Allow unknown space (Handles incomplete indoor maps)
-      motion_model_for_search: DUBIN             # Forward only mode (For wheelchair stability)
-      cost_travel_multiplier: 2.0                # Prefers detours around high-cost regions
+      plugin: "nav2_theta_star_planner/ThetaStarPlanner"
+      how_many_corners: 8
+      w_euc_cost: 1.0
+      w_traversal_cost: 2.0
+      allow_unknown: True
+      use_final_approach_orientation: False
+
 
 smoother_server:
   ros__parameters:
@@ -287,45 +303,3 @@ velocity_smoother:
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 1.0
-
-
-
-#========================================================
-# Collision Monitor
-#========================================================
-collision_monitor:
-  ros__parameters:
-    use_sim_time: True
-    enabled: True
-    base_frame_id: "base_link"
-    odom_frame_id: "odom"
-    transform_tolerance: 0.5
-    source_timeout: 5.0
-    stop_pub_timeout: 2.0
-    enabled_stamped_cmd_vel: True
-    cmd_vel_in_topic: "cmd_vel_smoothed"
-    cmd_vel_out_topic: "cmd_vel"
-    polygons: ["PolygonStop", "PolygonSlow"]
-
-
-    PolygonSlow:
-      type: "polygon"
-      points: "[[0.70, 0.45], [0.70, -0.45], [0.0, -0.45], [0.0, 0.45]]"
-      action_type: "slowdown"
-      min_points: 4
-      slowdown_ratio: 0.3
-      visualize: True
-      polygon_put_topic: "polygon_slowdown"
-
-    PolygonStop:
-      type: "polygon"
-      points: "[[0.45, 0.32], [0.45, -0.32], [0.0, -0.32], [0.0, 0.32]]"
-      action_type: "stop"
-      min_points: 4
-      visualize: True
-      polygon_put_topic: "polygon_stop"
-
-    observation_sources: ["scan"]
-    scan:
-      type: "scan"
-      topic: "/lidar/scan"
