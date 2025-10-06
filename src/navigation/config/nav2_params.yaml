@@ -302,7 +302,7 @@ collision_monitor:
     transform_tolerance: 0.5
     source_timeout: 5.0
     stop_pub_timeout: 2.0
-    enabled_stamped_cmd_vel: True
+    use_stamped_cmd_vel: True
     cmd_vel_in_topic: "cmd_vel_smoothed"
     cmd_vel_out_topic: "cmd_vel"
     polygons: ["PolygonStop", "PolygonSlow"]
@@ -315,7 +315,7 @@ collision_monitor:
       min_points: 4
       slowdown_ratio: 0.3
       visualize: True
-      polygon_put_topic: "polygon_slowdown"
+      polygon_pub_topic: "polygon_slowdown"
 
     PolygonStop:
       type: "polygon"
@@ -323,7 +323,7 @@ collision_monitor:
       action_type: "stop"
       min_points: 4
       visualize: True
-      polygon_put_topic: "polygon_stop"
+      polygon_pub_topic: "polygon_stop"
 
     observation_sources: ["scan"]
     scan:

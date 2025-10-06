@@ -3,6 +3,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
+from launch_ros.actions import SetRemap
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -18,6 +19,10 @@ def generate_launch_description():
                 get_package_share_directory('navigation'), 'config', 'nav2_params.yaml'
             ])
         ),
+
+        # Remap Rule
+        SetRemap(src = 'controller_server/cmd_vel', dst = 'cmd_vel_raw'),
+        SetRemap(src = 'velocity_smoother/cmd_vel', dst = 'cmd_vel_raw'),
 
         # ✅ Nav2 Bringup (Navigation only — no map_server, no amcl)
         IncludeLaunchDescription(
