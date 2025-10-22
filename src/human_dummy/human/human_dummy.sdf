@@ -1,40 +1,73 @@
-<sdf version='1.9'>
-  <model name='human_dummy'>
-    <link name='lowertorso'>
-      <inertial>
-        <pose>1.08998e-16 -0.00621349 -0.197996 0 0 0</pose>
-        <mass>6.6801899999999996</mass>
-        <inertia>
-          <ixx>0.025303599999999999</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.065479499999999996</iyy>
-          <iyz>0.00077403400000000005</iyz>
-          <izz>0.057895299999999997</izz>
-        </inertia>
-      </inertial>
-      <collision name='lowertorso_collision'>
-        <pose>1.11022e-15 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://human_dummy/human/assets/lowertorso.stl</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name='lowertorso_visual'>
-        <pose>1.11022e-15 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://human_dummy/human/assets/lowertorso.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>0.289216 0.47549 0.882353 1</diffuse>
-          <ambient>0.289216 0.47549 0.882353 1</ambient>
-        </material>
-      </visual>
-    </link>
-  </model>
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <plugin name="triggered_publisher_plugin" filename="libtriggered_publisher_plugin.so">
+    <actor>actor_walking</actor>
+    <input_topic>/keyboard/keypress</input_topic>
+    <output_topic>/cmd_vel</output_topic>
+    <key_presses>
+      <key_press>
+        <!-- Up arrow -->
+        <key_code>16777235</key_code>
+        <linear>
+          <x>0.5</x>
+        </linear>
+        <angular>
+          <z>0.0</z>
+        </angular>
+      </key_press>
+      <!-- Add other keys as needed -->
+    </key_presses>
+  </plugin>
+  <actor name="actor_walking">
+    <skin>
+        <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+        <scale>1.0</scale>
+    </skin>
+    <animation name="walk">
+        <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+    </animation>
+    <!-- <script>
+      <loop>true</loop>
+      <delay_start>0.000000</delay_start>
+      <auto_start>true</auto_start>
+        <trajectory id="0" type="walk" tension="0.6">
+        <waypoint>
+          <time>0</time>
+          <pose>0 0 1.0 0 0 0</pose>
+        </waypoint>
+        <waypoint>
+          <time>2</time>
+          <pose>2.0 0 1.0 0 0 0</pose>
+        </waypoint>
+        <waypoint>
+          <time>2.5</time>
+          <pose>2 0 1.0 0 0 1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>4</time>
+          <pose>2 2 1.0 0 0 1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>4.5</time>
+          <pose>2 2 1.0 0 0 3.142</pose>
+        </waypoint>
+        <waypoint>
+          <time>6</time>
+          <pose>0 2 1 0 0 3.142</pose>
+        </waypoint>
+        <waypoint>
+          <time>6.5</time>
+          <pose>0 2 1 0 0 -1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>8</time>
+          <pose>0 0 1.0 0 0 -1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>8.5</time>
+          <pose>0 0 1.0 0 0 0</pose>
+        </waypoint>
+    </trajectory>
+    </script> -->
+  </actor>
 </sdf>

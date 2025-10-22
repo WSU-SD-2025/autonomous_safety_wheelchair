@@ -1,1 +1,9 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/wheelchair_description/worlds/config_course.json
+{
+  "documentId": "4d26f1c86f9290e67b663372",
+  "workspaceId": "7c60e81276b42b93bd6d5a87",
+  "elementId": "18b42e54e8317f0712ffc5c9",
+  "outputFormat": "sdf",
+  "packageName": "quadruped_description/quadruped",
+  "robotName": "wheel_chair_course",
+  "assemblyName": "wheel_chair_course"
+}

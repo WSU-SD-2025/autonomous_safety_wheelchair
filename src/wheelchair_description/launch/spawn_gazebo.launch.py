@@ -12,10 +12,14 @@ def generate_launch_description():
     pkg_wheelchair_description = get_package_share_directory('wheelchair_description')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     pkg_navigation = get_package_share_directory('navigation')
+    pkg_human = get_package_share_directory('human_dummy')
 
     # URDF Path
     urdf_path = os.path.join(pkg_wheelchair_description, 'wheelchair', 'urdf', 'robot.urdf')
     assert os.path.exists(urdf_path), f'URDF not found: {urdf_path}'
+
+    human_path = os.path.join(pkg_human, 'human', 'human_dummy.sdf')
+    assert os.path.exists(human_path), f'Human SDF not found: {human_path}'
 
     # World file
     world_path = os.path.join(pkg_wheelchair_description, 'worlds', 'empty.sdf')
@@ -59,6 +63,18 @@ def generate_launch_description():
         ],
     )
 
+    spawn_actor = Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-file', human_path,
+            '-name', 'human_actor',
+            '-allow_renaming', 'true',
+            '-x', '2.0', '-y', '0.0', '-z', '0.0'
+        ],
+    )
+
     # ROS ↔ Gazebo Bridge
     gz_bridge = Node(
         package='ros_gz_bridge',
@@ -74,5 +90,6 @@ def generate_launch_description():
         gazebo,
         robot_state_publisher,
         spawn_entity,
+        spawn_actor,
         gz_bridge
     ])

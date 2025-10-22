@@ -1,1 +1,13 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy/human/assets/hand.part
+{
+    "configuration": "default",
+    "documentId": "237f26396eb8ce58cc5779a2",
+    "documentMicroversion": "6a65eb28e6764b97acf36203",
+    "elementId": "70cc9c1886a27659f3e142d1",
+    "fullConfiguration": "default",
+    "id": "Mk3Wp1lcJdCkBh3OX",
+    "isStandardContent": false,
+    "name": "Hand <1>",
+    "partId": "JOD",
+    "suppressed": false,
+    "type": "Part"
+}

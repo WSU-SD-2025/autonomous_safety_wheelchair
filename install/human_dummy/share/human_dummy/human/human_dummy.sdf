@@ -1,1 +1,81 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy/human/human_dummy.sdf
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <actor name="actor_walking">
+    <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+      <!-- Mode can be set to either path or velocity -->
+      <!-- <follow_mode>path</follow_mode> -->
+      <follow_mode>velocity</follow_mode>
+
+      <!-- Topic to which velocity commands will be published.  (default /cmd_vel)-->
+      <vel_topic>/cmd_vel</vel_topic>
+
+      <!-- Topic to which path commands will be published. (default /cmd_path.-->
+      <path_topic>/cmd_path</path_topic>
+
+      <!-- Multiplier to base animation speed that adjusts the speed of  both the actor's animation and foot swinging. -->
+      <animation_factor>4.0</animation_factor>
+
+      <!-- Distance threshold between actor and target pose during path-following -->
+      <linear_tolerance>0.1</linear_tolerance>
+
+      <!-- Speed at which actor moves during path-following -->
+      <linear_velocity>1</linear_velocity>
+
+      <!-- Angular difference in orientation between actor and target orientation -->
+      <angular_tolerance>0.05</angular_tolerance>
+      
+      <!-- Angular speed at which actor rotates to achieve desired orientation -->
+      <angular_velocity>2.5</angular_velocity>
+    </plugin>
+    <skin>
+        <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+        <scale>1.0</scale>
+    </skin>
+    <animation name="walk">
+        <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
+    </animation>
+    <!-- <script>
+      <loop>true</loop>
+      <delay_start>0.000000</delay_start>
+      <auto_start>true</auto_start>
+        <trajectory id="0" type="walk" tension="0.6">
+        <waypoint>
+          <time>0</time>
+          <pose>0 0 1.0 0 0 0</pose>
+        </waypoint>
+        <waypoint>
+          <time>2</time>
+          <pose>2.0 0 1.0 0 0 0</pose>
+        </waypoint>
+        <waypoint>
+          <time>2.5</time>
+          <pose>2 0 1.0 0 0 1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>4</time>
+          <pose>2 2 1.0 0 0 1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>4.5</time>
+          <pose>2 2 1.0 0 0 3.142</pose>
+        </waypoint>
+        <waypoint>
+          <time>6</time>
+          <pose>0 2 1 0 0 3.142</pose>
+        </waypoint>
+        <waypoint>
+          <time>6.5</time>
+          <pose>0 2 1 0 0 -1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>8</time>
+          <pose>0 0 1.0 0 0 -1.57</pose>
+        </waypoint>
+        <waypoint>
+          <time>8.5</time>
+          <pose>0 0 1.0 0 0 0</pose>
+        </waypoint>
+    </trajectory>
+    </script> -->
+  </actor>
+</sdf>

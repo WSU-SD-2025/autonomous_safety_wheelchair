@@ -1,1 +1,7 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy/human/config.json
+{
+    "documentId": "237f26396eb8ce58cc5779a2",
+    "outputFormat": "urdf",
+    "packageName": "human_dummy/human",
+    "robotName": "human_dummy",
+    "assemblyName": "DummyAssy"
+}

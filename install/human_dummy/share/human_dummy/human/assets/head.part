@@ -1,1 +1,13 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy/human/assets/head.part
+{
+    "configuration": "default",
+    "documentId": "237f26396eb8ce58cc5779a2",
+    "documentMicroversion": "6a65eb28e6764b97acf36203",
+    "elementId": "0bad3e1fa3ac4c07cd26a017",
+    "fullConfiguration": "default",
+    "id": "M0cnp//Fu5Q2DKQN/",
+    "isStandardContent": false,
+    "name": "Head <1>",
+    "partId": "JLD",
+    "suppressed": false,
+    "type": "Part"
+}

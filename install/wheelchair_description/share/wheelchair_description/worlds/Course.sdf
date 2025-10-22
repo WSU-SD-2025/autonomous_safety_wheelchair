@@ -1,1 +1,46 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/wheelchair_description/worlds/Course.sdf
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 4d26f1c86f9290e67b663372 / workspace_id: 7c60e81276b42b93bd6d5a87 -->
+<sdf version="1.7">
+  <model name="quadruped_robot">
+    <!-- Link part_1 -->
+    <link name="part_1">
+      <inertial>
+        <pose>-0.167828 1.60425 2.37484 0 0 0</pose>
+        <mass>502070</mass>
+        <inertia>
+          <ixx>3.81056e+06</ixx>
+          <ixy>57414.1</ixy>
+          <ixz>-56804.3</ixz>
+          <iyy>3.72329e+06</iyy>
+          <iyz>-7267.72</iyz>
+          <izz>7.40051e+06</izz>
+        </inertia>
+      </inertial>
+      <pose>0 0 0 0 -0 0</pose>
+      <!-- Part part_1 -->
+      <visual name="part_1_visual_mesh_1">
+        <pose relative_to="part_1">-2.31754 0.0641442 1.91531 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://quadruped_robot/assets/part_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_collision_mesh_2">
+        <pose relative_to="part_1">-2.31754 0.0641442 1.91531 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://quadruped_robot/assets/part_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

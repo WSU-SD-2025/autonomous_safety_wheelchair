@@ -1,1 +1,13 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy/human/assets/lowertorso.part
+{
+    "configuration": "default",
+    "documentId": "237f26396eb8ce58cc5779a2",
+    "documentMicroversion": "6a65eb28e6764b97acf36203",
+    "elementId": "b0c5ea7d4a8530226a7f4062",
+    "fullConfiguration": "default",
+    "id": "MN9CTqber192U6L2+",
+    "isStandardContent": false,
+    "name": "LowerTorso <1>",
+    "partId": "JVD",
+    "suppressed": false,
+    "type": "Part"
+}

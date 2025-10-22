@@ -1,1 +1,2 @@
-/home/sejunmoon/autonomous_safety_wheelchair/build/human_dummy/ament_cmake_environment_hooks/local_setup.dsv
+source;share/human_dummy/environment/ament_prefix_path.sh
+source;share/human_dummy/environment/path.sh
