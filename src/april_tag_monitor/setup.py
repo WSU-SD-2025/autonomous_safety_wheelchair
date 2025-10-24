@@ -1,20 +1,20 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='april_tag_monitor',
-    version='0.1.0',
-    packages=['april_tag_monitor'],   # include the subfolder as a package
+    version='0.0.1',
+    packages=find_packages(include=['april_tag_monitor', 'april_tag_monitor.*']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/april_tag_monitor']),
+        ('share/april_tag_monitor', ['package.xml']),
+    ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='lcott',
-    maintainer_email='lcott@example.com',
-    description='AprilTag monitor nodes',
-    license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'tag_monitor_node=april_tag_monitor.tag_monitor_node:main',
-            'mock_tag_publisher=april_tag_monitor.mock_tag_publisher:main',
+            'tag_monitor_node = april_tag_monitor.tag_monitor_node:main',
+            'mock_tag_publisher = april_tag_monitor.mock_tag_publisher:main',
         ],
     },
 )

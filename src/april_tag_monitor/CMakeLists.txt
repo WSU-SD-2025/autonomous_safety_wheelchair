@@ -6,9 +6,17 @@ find_package(ament_cmake_python REQUIRED)
 
 ament_python_install_package(${PROJECT_NAME})
 
-install(PROGRAMS
- 
-  DESTINATION lib/${PROJECT_NAME}
+# Install resource files
+install(
+  DIRECTORY resource/
+  DESTINATION share/${PROJECT_NAME}
 )
 
+# Explicitly install the package.xml as a marker for ament
+install(
+  FILES package.xml
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# Install the ament index marker
 ament_package()

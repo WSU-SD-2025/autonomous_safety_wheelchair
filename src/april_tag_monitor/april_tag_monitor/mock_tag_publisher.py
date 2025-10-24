@@ -11,8 +11,8 @@ class MockTagPublisher(Node):
     def publish_mock_tag(self):
         msg = PoseStamped()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = 'base_link'  # use frame id consistent with your system
-        msg.pose.position.x = 1.0  # within your threshold of 1.8m
+        msg.header.frame_id = 'base_link'  
+        msg.pose.position.x = 1.0  
         msg.pose.position.y = 0.0
         msg.pose.position.z = 0.5
         msg.pose.orientation.x = 0.0
