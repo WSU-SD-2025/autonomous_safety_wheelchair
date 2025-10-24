@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+	<model name="april_tag_model">
+		<static>true</static>
+		<link name="link">
+			<visual name="visual">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<plane>
+						<size>0.2 0.2</size>
+						<!-- 20cm x 20cm -->
+						<normal>0 0 1</normal>
+					</plane>
+				</geometry>
+				<material>
+					<pbr>
+						<metal>
+							<albedo_map>model://april_tag_model/materials/textures/tag36_11_00000_fixed.png</albedo_map>
+							<roughness>1.0</roughness>
+							<metalness>0.0</metalness>
+						</metal>
+					</pbr>
+				</material>
+			</visual>
+
+			<collision name="collision">
+				<geometry>
+					<plane>
+						<size>0.2 0.2</size>
+						<normal>0 0 1</normal>
+					</plane>
+				</geometry>
+			</collision>
+		</link>
+	</model>
+</sdf>

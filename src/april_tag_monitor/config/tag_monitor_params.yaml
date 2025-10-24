@@ -1,0 +1,13 @@
+april_tag_node:
+  ros__parameters:
+    front_camera_topic: "/front_rgbd/rgb/image"
+    rear_camera_topic: "/rear_rgbd/rgb/image"
+    front_camera_info_topic: "/front_rgbd/rgb/camera_info"
+    rear_camera_info_topic: "/rear_rgbd/rgb/camera_info"
+    tag_distance_threshold_m: 1.8
+    no_tag_timeout_sec: 30.0
+    tag_detection_frame: "base_link"
+    enable_auto_mode_switching: true
+    april_destination_topic: "/april_destination"
+    person_back_topic: "/person_back"
+    no_tag_topic: "/no_tag_detected"
