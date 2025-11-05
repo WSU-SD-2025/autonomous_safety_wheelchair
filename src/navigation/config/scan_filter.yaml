@@ -1,0 +1,27 @@
+scan_filters:
+  ros__parameters:
+    use_sim_time: True
+    scan_filter_chain:
+      - name: "speckle"
+        type: "laser_filters/LaserScanSpeckleFilter"
+        params:
+          max_range_difference: "0.05"
+          filter_window: "2"
+
+      - name: "shadow"
+        type: "laser_filters/ScanShadowsFilter"
+        params:
+          min_angle: "0.0"
+          max_angle: "170.0"
+          window: "1"
+
+      - name: "self_filter_box"
+        type: "laser_filters/LaserScanBoxFilter"
+        params:
+          box_frame: "base_link"
+          min_x: "-0.40"
+          max_x: "0.40"
+          min_y: "-0.35"
+          max_y: "0.35"
+          min_z: "-0.10"
+          max_z: "0.60"

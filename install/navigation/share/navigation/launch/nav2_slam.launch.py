@@ -1,1 +1,0 @@
-/home/sejunmoon/autonomous_safety_wheelchair/src/navigation/launch/nav2_slam.launch.py

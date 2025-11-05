@@ -624,11 +624,10 @@
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
-    <!-- 실제 장착 위치로 조정 -->
+    <!-- Actual position -->
     <origin rpy="0 0 0" xyz="0.0 0.0 0.25"/>
   </joint>
-  <!-- 3) Gazebo(IMU) 센서 지정 -->
-  <!-- URDF 안에서 Gazebo 플러그인/센서를 추가하려면 <gazebo reference="..."> 사용 -->
+  <!-- 3) Gazebo IMU sensor -->
   <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
@@ -653,21 +652,21 @@
   <gazebo>
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"/>
     <plugin filename="libignition-gazebo6-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
-      <!-- 좌/우 바퀴 조인트: 좌측 2개, 우측 2개 -->
+
       <left_joint>front_lw</left_joint>
       <left_joint>back_lw</left_joint>
       <right_joint>front_rw</right_joint>
       <right_joint>back_rw</right_joint>
-      <!-- 기하 파라미터 -->
+
       <wheel_separation>0.62</wheel_separation>
       <wheel_radius>0.15</wheel_radius>
-      <!-- Gazebo 내부 토픽: 브리지에서 ROS와 매핑 -->
+
       <topic>/cmd_vel</topic>
-      <!-- => /model/<MODEL_NAME>/cmd_vel -->
+
       <odom_topic>/odom</odom_topic>
-      <!-- => /model/<MODEL_NAME>/odometry -->
+
       <odom_publish_frequency>50</odom_publish_frequency>
-      <!-- TF는 EKF가 퍼블리시 -->
+
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
     </plugin>

@@ -1,5 +1,3 @@
-# ekf.yaml  (한 파일 안에 3개 섹션)
-
 # --- EKF #1: odom EKF (wheel odom + IMU) ---
 ekf_odom:
   ros__parameters:

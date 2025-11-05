@@ -28,5 +28,6 @@
         "/home/sejunmoon/Gamma_ws/install/fake_gps/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/home/sejunmoon/autonomous_safety_wheelchair/src/human_dummy"
 }
