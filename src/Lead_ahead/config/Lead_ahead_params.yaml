@@ -1,0 +1,24 @@
+lead_ahead_node:
+  ros__parameters:
+    # Target distance to maintain from detected AprilTag (meters)
+    desired_distance_m: 1.0
+
+    # Maximum forward speed (m/s)
+    max_speed_mps: 0.8
+
+    # Deceleration rate when no tag detected (m/s²)
+    deceleration_mps2: 0.35
+
+    # Proportional control gain for forward speed
+    linear_kp: 0.6
+
+    # Proportional gain for angular alignment (steering)
+    angular_kp: 0.6
+
+    # Topic names (so you can remap easily if needed)
+    april_destination_topic: "/april_destination"
+    no_tag_topic: "/no_tag_detected"
+    cmd_vel_topic: "/cmd_vel"
+
+    # Control loop period (seconds)
+    control_period_s: 0.1

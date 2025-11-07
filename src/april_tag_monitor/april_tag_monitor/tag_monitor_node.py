@@ -131,6 +131,12 @@ def main(args=None):
 
     rclpy.init(args=args)
     node = TagMonitorNode()
+    source = node.last_detection_source
+    if source == 'front':
+        self.publish_mode('lead_ahead')
+    elif source == 'rear':
+        self.publish_mode('follow_behind')
+
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
