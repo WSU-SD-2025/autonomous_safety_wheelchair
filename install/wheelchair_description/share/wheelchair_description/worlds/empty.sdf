@@ -612,7 +612,7 @@
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
             <match field="data">87</match> <!-- w -->
         </input>
-        <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        <output type="ignition.msgs.Twist" topic="/cmd_vel2">
             linear: {x: 0.5}, angular: {z: 0.0}
         </output>
     </plugin>
@@ -623,7 +623,7 @@
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
             <match field="data">88</match> <!-- x -->
         </input>
-        <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        <output type="ignition.msgs.Twist" topic="/cmd_vel2">
             linear: {x: -0.5}, angular: {z: 0.0}
         </output>
     </plugin>
@@ -634,7 +634,7 @@
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
             <match field="data">65</match> <!-- a -->
         </input>
-        <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        <output type="ignition.msgs.Twist" topic="/cmd_vel2">
             linear: {x: 0.0}, angular: {z: 0.5}
         </output>
     </plugin>
@@ -645,7 +645,7 @@
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
             <match field="data">68</match> <!-- d -->
         </input>
-        <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        <output type="ignition.msgs.Twist" topic="/cmd_vel2">
             linear: {x: 0.0}, angular: {z: -0.5}
         </output>
     </plugin>
@@ -656,7 +656,7 @@
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
             <match field="data">83</match> <!-- s -->
         </input>
-        <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        <output type="ignition.msgs.Twist" topic="/cmd_vel2">
             linear: {x: 0.0}, angular: {z: 0.0}
         </output>
     </plugin>
