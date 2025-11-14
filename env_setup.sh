@@ -6,6 +6,9 @@
 #
 # IMPORTANT NOTES:
 #
+#   - Do not run more than once per shell session. It will keep appending to
+#     the environment variables.
+#
 #   - run this script using the command 'source ./env_setup.sh' or the
 #     environment variables will only exist in the script's subprocess.
 #
