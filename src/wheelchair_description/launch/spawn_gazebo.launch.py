@@ -19,7 +19,7 @@ def generate_launch_description():
     assert os.path.exists(urdf_path), f'URDF not found: {urdf_path}'
 
     # human_path = os.path.join(pkg_human, 'human', 'human_dummy.sdf')
-    human_path = os.path.join(pkg_human, 'human', 'actor_robot2.sdf')
+    human_path = os.path.join(pkg_human, 'human', 'actor_robot.sdf')
     assert os.path.exists(human_path), f'Human SDF not found: {human_path}'
 
     # World file

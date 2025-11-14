@@ -611,7 +611,7 @@
     <!--  to enable movement of the actor_robot. Also need to start the -->
     <!--  Key Publisher plugin after starting the simulation (top-right -->
     <!--  corner of the gazebo window) -->
-    
+
     <!-- Moving Forward-->
     <plugin filename="libignition-gazebo-triggered-publisher-system.so"
             name="ignition::gazebo::systems::TriggeredPublisher">
@@ -619,7 +619,7 @@
             <match field="data">87</match> <!-- w -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.5}, angular: {z: 0.0}
+            linear: {x: 3.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -630,7 +630,7 @@
             <match field="data">88</match> <!-- x -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: -0.5}, angular: {z: 0.0}
+            linear: {x: -3.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -641,7 +641,7 @@
             <match field="data">65</match> <!-- a -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: 0.5}
+            linear: {x: 0.0}, angular: {z: 3.0}
         </output>
     </plugin>
 
@@ -652,7 +652,7 @@
             <match field="data">68</match> <!-- d -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: -0.5}
+            linear: {x: 0.0}, angular: {z: -3.0}
         </output>
     </plugin>
 
