@@ -5,12 +5,18 @@
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
     </physics>
+
+
+    <!-- ========================================================= Plugins ================================================================ -->
     <plugin name='gz::sim::systems::Physics' filename='ignition-gazebo-physics-system'/>
     <plugin name='gz::sim::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
     <plugin name='gz::sim::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
     <plugin name='gz::sim::systems::Contact' filename='ignition-gazebo-contact-system'/>
     <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'/>
     <plugin name='gz::sim::systems::Imu' filename='gz-sim-imu-system'/>
+    <!-- ======================================================================================================================================= -->
+
+
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -19,6 +25,8 @@
       <background>0.7 0.7 0.7 1</background>
       <shadows>true</shadows>
     </scene>
+
+    <!-- ========================================================= Ground ================================================================ -->
     <model name='ground_plane'>
       <static>true</static>
       <link name='link'>
@@ -68,7 +76,11 @@
       <pose>0 0 0 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
+    <!-- ======================================================================================================================================= -->
 
+
+
+    <!-- ========================================================= Obstacles ================================================================ -->
     <model name='box'>
       <pose>2.13259 2.83418 0.5 0 0 -0</pose>
       <link name='box_link'>
@@ -586,6 +598,10 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
+    <!-- ======================================================================================================================================= -->
+
+
+
     <light name='sun' type='directional'>
       <pose>0 0 10 0 -0 0</pose>
       <cast_shadows>true</cast_shadows>
@@ -619,7 +635,7 @@
             <match field="data">87</match> <!-- w -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 3.0}, angular: {z: 0.0}
+            linear: {x: 2.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -630,7 +646,7 @@
             <match field="data">88</match> <!-- x -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: -3.0}, angular: {z: 0.0}
+            linear: {x: -2.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -641,7 +657,7 @@
             <match field="data">65</match> <!-- a -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: 3.0}
+            linear: {x: 0.0}, angular: {z: 1.5}
         </output>
     </plugin>
 
@@ -652,7 +668,7 @@
             <match field="data">68</match> <!-- d -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: -3.0}
+            linear: {x: 0.0}, angular: {z: -1.5}
         </output>
     </plugin>
 
