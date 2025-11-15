@@ -38,7 +38,7 @@
   <joint name="base_footprint_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <!-- 필요 시 높이 보정: z -->
+
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <!-- =========================
@@ -98,6 +98,8 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
+
+
   <link name="front_right_wheel">
     <inertial>
       <origin rpy="0 0 0" xyz="-2.22037e-09 1.06602e-06 -0.037537"/>

@@ -1,4 +1,5 @@
 import os
+
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, TimerAction, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -19,21 +20,20 @@ def generate_launch_description():
 
 
     # ======================= File Paths ========================== #
-
     # Wheelchair URDF
     urdf_path = os.path.join(
         pkg_wheelchair_description, "wheelchair", "urdf", "robot.urdf"
     )
     assert os.path.exists(urdf_path), f"URDF not found: {urdf_path}"
 
-    # Actor robot (Instead of human)
+    # Actor robot (instead of human)
     actor_sdf_path = os.path.join(pkg_human, "human", "actor_robot.sdf")
     assert os.path.exists(actor_sdf_path), f"Actor SDF not found: {actor_sdf_path}"
 
     # World
     world_path = os.path.join(pkg_wheelchair_description, "worlds", "empty.sdf")
 
-    # ROS ↔ Gazebo bridge (All topics are defined in gz_bridge.yaml)
+    # ROS ↔ Gazebo bridge (all topics are defined in gz_bridge.yaml)
     bridge_config_path = PathJoinSubstitution(
         [pkg_navigation, "config", "gz_bridge.yaml"]
     )
@@ -41,19 +41,19 @@ def generate_launch_description():
 
 
     # ================== Robot Description (URDF) ================= #
-
     # robot_state_publisher
     with open(urdf_path, "r") as f:
         urdf_xml = f.read()
-
     robot_description = ParameterValue(urdf_xml, value_type=str)
 
-    # ================== Global Environment Setting ================== #
+    # ================== Global Environment Setting =============== #
     # Force to use CycloneDDS
     set_rmw = SetEnvironmentVariable(
         name="RMW_IMPLEMENTATION",
         value="rmw_cyclonedds_cpp",
     )
+
+
 
     # ==================== Gazebo / Simulation ==================== #
     # Ignition Gazebo 
@@ -118,7 +118,7 @@ def generate_launch_description():
         ],
     )
 
-    # Spawn Actor Robot (instead of Caregiver)
+    # Spawn actor robot (instead of caregiver)
     spawn_actor = Node(
         package="ros_gz_sim",
         executable="create",

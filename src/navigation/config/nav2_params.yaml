@@ -9,9 +9,9 @@ bt_navigator:
     wait_for_service_timeout: 1000
 
     # =============== Dynamic Object Following (Caregiver Following) =========================
-    #default_nav_to_pose_bt_xml: "(find-pkg-share-navigation)/bt/caregiver_following_bt.xml"
-    #always_reload_bt_xml: true
-    #goal_updater_topic: "/goal_updaate"
+    default_nav_to_pose_bt_xml: $(find-pkg-share navigation)/bt/caregiver_following_bt.xml
+    always_reload_bt_xml: true
+    goal_updater_topic: "/caregiver_pos"
     # =========================================================================================
 
     enable_groot_monitoring: true
