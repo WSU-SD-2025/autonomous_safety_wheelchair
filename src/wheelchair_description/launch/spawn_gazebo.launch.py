@@ -135,7 +135,16 @@ def generate_launch_description():
             "-z", "0.0",
         ],
     )
-
+    #caregiver position publisher node
+    caregiver_pos_node = Node(
+    package="human_dummy", 
+    executable="caregiver_pos_publisher.py",
+    name="caregiver_pos_publisher",
+    output="screen",
+    parameters=[
+        {"use_sim_time": True}
+    ],
+)
 
 
     # ===================== Delayed Actions ======================= #
@@ -151,6 +160,7 @@ def generate_launch_description():
     # 4) robot_state_publisher (delayed)
     # 5) wheelchair spawn (delayed)
     # 6) actor spawn
+    # 7) caregiver position publisher node
     return LaunchDescription(
         [
             set_rmw,
@@ -159,5 +169,6 @@ def generate_launch_description():
             delayed_rsp,
             delayed_spawn_wheelchair,
             spawn_actor,
+            caregiver_pos_node,
         ]
     )
