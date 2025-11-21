@@ -1,10 +1,6 @@
 <root main_tree_to_execute="MainTree">
     <BehaviorTree ID="MainTree">
         <PipelineSequence name="CaregiverFollowing">
-			
-			<TopicToBlackboard topic_name="/caregiver_pos"
-                               output_key="{goal}"
-                               topic_type="geometry_msgs::msg::PoseStamped"/>
 
             <RateController hz="15.0">
                 <Sequence>

@@ -117,10 +117,3 @@
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
-
-  # Bridges the Gazebo model state topic to a raw ROS 2 topic
-  ros_topic: /gazebo/model/pose
-  gz_topic: /world/empty/pose/info  
-  ros_type: gazebo_msgs/msg/ModelStates
-  gz_type: ignition.msgs.Model
-  direction: GZ_TO_ROS
