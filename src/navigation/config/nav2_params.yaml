@@ -4,7 +4,7 @@ bt_navigator:
     global_frame: odom
     robot_base_frame: base_link
     odom_topic: /odometry/filtered
-    bt_loop_duration: 300
+    bt_loop_duration: 100 #100 (previous good value)
     default_server_timeout: 20
     wait_for_service_timeout: 1000
 
@@ -89,14 +89,14 @@ controller_server:
     # Progress checker parameters
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
-      required_movement_radius: 0.08
-      movement_time_allowance: 2.0
+      required_movement_radius: 0.02
+      movement_time_allowance: 5.0
 
     general_goal_checker:
       stateful: False
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.45
-      yaw_goal_tolerance: 0.45
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.7
 
     # FollowPath (MPPI)
     FollowPath:
@@ -223,7 +223,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 5.0
-        inflation_radius: 0.6
+        inflation_radius: 0.5
 
 global_costmap:
   global_costmap:
@@ -271,7 +271,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 7.0
-        inflation_radius: 0.7
+        inflation_radius: 0.5
       always_send_full_costmap: True
 
 map_server:
@@ -296,7 +296,7 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "nav2_smac_planner/SmacPlanner2D"  
-      tolerance: 0.25                            # Goal proximity tolerance
+      tolerance: 0.4                            # Goal proximity tolerance
       use_astar: true                            # Use A* search
       allow_unknown: true                        # Allow unknown space (Handles incomplete indoor maps)
       motion_model_for_search: DUBIN             # Forward only mode (For wheelchair stability)
@@ -394,16 +394,16 @@ collision_monitor:
 
     PolygonSlow:
       type: "polygon"
-      points: [0.70, 0.45, 0.70, -0.45, 0.0, -0.45, 0.0, 0.45]
+      points: [0.90, 0.50, 0.90, -0.50, 0.0, -0.50, 0.0, 0.50]
       action_type: "slowdown"
       min_points: 4
-      slowdown_ratio: 0.25
+      slowdown_ratio: 0.15
       visualize: True
       polygon_pub_topic: "polygon_slowdown"
 
     PolygonStop:
       type: "polygon"
-      points: [0.45, 0.32, 0.45, -0.32, 0.0, -0.32, 0.0, 0.32]
+      points: [0.60, 0.40, 0.60, -0.40, 0.0, -0.40, 0.0, 0.40]
       action_type: "stop"
       min_points: 4
       visualize: True

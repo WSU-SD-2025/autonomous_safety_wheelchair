@@ -635,7 +635,7 @@
             <match field="data">87</match> <!-- w -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 2.0}, angular: {z: 0.0}
+            linear: {x: 1.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -646,7 +646,7 @@
             <match field="data">88</match> <!-- x -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: -2.0}, angular: {z: 0.0}
+            linear: {x: -1.0}, angular: {z: 0.0}
         </output>
     </plugin>
 
@@ -657,7 +657,7 @@
             <match field="data">65</match> <!-- a -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: 1.5}
+            linear: {x: 0.0}, angular: {z: 1.0}
         </output>
     </plugin>
 
@@ -668,7 +668,7 @@
             <match field="data">68</match> <!-- d -->
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel2">
-            linear: {x: 0.0}, angular: {z: -1.5}
+            linear: {x: 0.0}, angular: {z: -1.0}
         </output>
     </plugin>
 

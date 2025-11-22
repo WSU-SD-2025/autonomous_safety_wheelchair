@@ -117,3 +117,11 @@
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
+
+# ===================================================================================================
+# Actor Robot Odometry
+- ros_topic_name: "/human_actor/odometry"
+  gz_topic_name: "/model/human_actor/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
